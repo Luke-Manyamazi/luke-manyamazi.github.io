@@ -49,7 +49,7 @@ export function Hero() {
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed"
             >
               I'm a software developer and systems administrator specializing in building
-              exceptional digital experiences. Currently, I'm focused on creating accessible, 
+              exceptional digital experiences. Currently, I'm focused on creating accessible,
               human-centered products.
             </motion.p>
 
@@ -76,23 +76,23 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex-1 relative w-full max-w-[500px] aspect-square lg:aspect-[4/5]"
           >
-            {/* Image Placeholder with Gradient Merge */}
+            {/* Gradient Merge */}
             <div className="relative w-full h-full bg-gradient-to-b from-primary/20 to-transparent rounded-2xl overflow-hidden group">
               <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-primary/30 rounded-2xl">
-                <span className="text-primary/50 font-mono text-sm">Your Image Here</span>
+                <span className="text-primary/50 font-mono text-sm"></span>
               </div>
-              
-              {/* This is where the actual image will go */}
-              {/* <img 
-                src="/path-to-your-image.png" 
-                alt="Luke Manyamazi" 
+
+
+              {<img
+                src="/hero-image.png"
+                alt="Luke Manyamazi"
                 className="w-full h-full object-cover"
-              /> */}
+              />}
 
               {/* Gradient overlay to merge at bottom */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent pointer-events-none" />
             </div>
-            
+
             {/* Decorative element */}
             <div className="absolute -inset-4 border-2 border-primary/10 rounded-3xl -z-10 group-hover:border-primary/20 transition-colors" />
           </motion.div>

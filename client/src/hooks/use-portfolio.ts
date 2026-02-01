@@ -1,73 +1,18 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { api, type InsertMessage } from "@shared/routes";
+import { PROJECTS, SKILLS, EXPERIENCE, EDUCATION } from "@/lib/constants";
 
-// Skills Hook
-export function useSkills() {
-  return useQuery({
-    queryKey: [api.skills.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.skills.list.path);
-      if (!res.ok) throw new Error("Failed to fetch skills");
-      return api.skills.list.responses[200].parse(await res.json());
-    },
-  });
-}
-
-// Projects Hook
+// This tells the frontend "The data is ready, don't look at the database"
 export function useProjects() {
-  return useQuery({
-    queryKey: [api.projects.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.projects.list.path);
-      if (!res.ok) throw new Error("Failed to fetch projects");
-      return api.projects.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: PROJECTS, isLoading: false };
 }
 
-// Experience Hook
+export function useSkills() {
+  return { data: SKILLS, isLoading: false };
+}
+
 export function useExperience() {
-  return useQuery({
-    queryKey: [api.experience.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.experience.list.path);
-      if (!res.ok) throw new Error("Failed to fetch experience");
-      return api.experience.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: EXPERIENCE, isLoading: false };
 }
 
-// Education Hook
 export function useEducation() {
-  return useQuery({
-    queryKey: [api.education.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.education.list.path);
-      if (!res.ok) throw new Error("Failed to fetch education");
-      return api.education.list.responses[200].parse(await res.json());
-    },
-  });
-}
-
-// Contact Form Mutation
-export function useContactMutation() {
-  return useMutation({
-    mutationFn: async (data: InsertMessage) => {
-      const res = await fetch(api.contact.submit.path, {
-        method: api.contact.submit.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) {
-        if (res.status === 400) {
-          const error = api.contact.submit.responses[400].parse(await res.json());
-          throw new Error(error.message);
-        }
-        throw new Error("Failed to send message");
-      }
-
-      return api.contact.submit.responses[200].parse(await res.json());
-    },
-  });
+  return { data: EDUCATION, isLoading: false };
 }

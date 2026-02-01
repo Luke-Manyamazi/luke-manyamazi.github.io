@@ -1,0 +1,128 @@
+// client/src/lib/constants.ts
+
+export const SKILLS = [
+    // Languages
+    { id: 1, name: "JavaScript", category: "Languages" },
+    { id: 2, name: "Python", category: "Languages" },
+    { id: 3, name: "TypeScript", category: "Languages" },
+    { id: 4, name: "Java", category: "Languages" },
+    { id: 5, name: "C/C++/C#", category: "Languages" },
+    // Frameworks/Libraries
+    { id: 6, name: "React", category: "Frameworks" },
+    { id: 7, name: "Node.js", category: "Frameworks" },
+    { id: 8, name: "Express.js", category: "Frameworks" },
+    { id: 9, name: "Tailwind CSS", category: "Frameworks" },
+    // Databases & Cloud
+    { id: 10, name: "MySQL", category: "Backend" },
+    { id: 11, name: "PostgreSQL", category: "Backend" },
+    { id: 12, name: "Firebase", category: "Backend" },
+    { id: 13, name: "AWS", category: "Cloud" },
+    { id: 14, name: "Google Cloud", category: "Cloud" },
+];
+
+export const PROJECTS = [
+    {
+        id: 1,
+        title: "CYFOverflow",
+        description: "A Q&A platform enabling question posting, answering, and discussions. Features API-driven data fetching and dynamic rendering.",
+        techStack: ["JavaScript", "HTML", "CSS", "REST APIs"],
+        link: "https://cyfoverflow.example.com", // Replace with real link
+        githubLink: "https://github.com/LukeManyamazi",
+    },
+    {
+        id: 2,
+        title: "Pop & Chill TV Explorer",
+        description: "TV Show finder using TMDB API with YouTube trailer integration. Improved API response and rendering efficiency by 35%.",
+        techStack: ["JavaScript", "TMDB API", "YouTube Integration", "Netlify"],
+        link: "https://pop-chill.netlify.app",
+        githubLink: "https://github.com/LukeManyamazi",
+    },
+    {
+        id: 3,
+        title: "Real-Time Group Chat",
+        description: "Instant messaging app using WebSockets for live updates and online user tracking.",
+        techStack: ["WebSocket", "Node.js", "JavaScript", "CSS"],
+        link: "",
+        githubLink: "https://github.com/LukeManyamazi",
+    },
+    {
+        id: 4,
+        title: "Quote Generator",
+        description: "Custom backend API fetching random quotes with optimized routes, reducing latency by 20%.",
+        techStack: ["Node.js", "JavaScript", "Express"],
+        link: "",
+        githubLink: "https://github.com/LukeManyamazi",
+    }
+];
+
+export const EXPERIENCE = [
+    {
+        id: 1,
+        role: "Software & Deployment Specialist",
+        company: "Torga Optical",
+        duration: "2020 – Present",
+        description: "Collaborate with developers on feature development and bug fixing. Conduct deployment testing for 170+ branches and created automation scripts for asset tracking.",
+    },
+    {
+        id: 2,
+        role: "IT Support Technician",
+        company: "Torga Optical",
+        duration: "2020 – Present",
+        description: "Maintain 18+ IT systems with 99.9% uptime. Reduced support requests by 30% through staff training.",
+    }
+];
+
+export const EDUCATION = [
+    // Degrees
+    {
+        id: 1,
+        degree: "BSc (Hons) Computer Engineering",
+        institution: "Zimbabwe Open University",
+        year: "Graduating 2027",
+        type: "Degree",
+    },
+    {
+        id: 2,
+        degree: "Software Developer",
+        institution: "CodeYourFuture",
+        year: "Jan 2026",
+        type: "Bootcamp",
+    },
+    // Certifications
+    {
+        id: 3,
+        degree: "CS50’s Introduction to Python",
+        institution: "Harvard University",
+        year: "2024",
+        type: "Certificate",
+    },
+    {
+        id: 4,
+        degree: "AWS Cloud Practitioner Essentials",
+        institution: "Amazon Web Services",
+        year: "2024",
+        type: "AWS",
+    },
+    {
+        id: 5,
+        degree: "Responsive Web Design",
+        institution: "FreeCodeCamp",
+        year: "2023",
+        type: "Certificate",
+    },
+    {
+        id: 6,
+        degree: "Cloud Computing 101",
+        institution: "Coursera",
+        year: "2023",
+        type: "Certificate",
+    },
+    // Badges (Optional - can be included here)
+    {
+        id: 7,
+        degree: "Launch Module & SDC",
+        institution: "CodeYourFuture",
+        year: "2024",
+        type: "Badge",
+    }
+];
