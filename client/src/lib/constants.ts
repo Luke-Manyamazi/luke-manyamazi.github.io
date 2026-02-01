@@ -26,32 +26,32 @@ export const PROJECTS = [
         title: "CYFOverflow",
         description: "A Q&A platform enabling question posting, answering, and discussions. Features API-driven data fetching and dynamic rendering.",
         techStack: ["JavaScript", "HTML", "CSS", "REST APIs"],
-        link: "https://cyfoverflow.example.com", // Replace with real link
-        githubLink: "https://github.com/LukeManyamazi",
+        link: "https://cyfoverflow.hosting.codeyourfuture.io/",
+        githubLink: "https://github.com/Luke-Manyamazi/CYFoverflow",
     },
     {
         id: 2,
         title: "Pop & Chill TV Explorer",
         description: "TV Show finder using TMDB API with YouTube trailer integration. Improved API response and rendering efficiency by 35%.",
         techStack: ["JavaScript", "TMDB API", "YouTube Integration", "Netlify"],
-        link: "https://pop-chill.netlify.app",
-        githubLink: "https://github.com/LukeManyamazi",
+        link: "https://popandchill.netlify.app/",
+        githubLink: "https://github.com/Luke-Manyamazi/Pop-and-Chill-Movie-Explorer-App",
     },
     {
         id: 3,
         title: "Real-Time Group Chat",
         description: "Instant messaging app using WebSockets for live updates and online user tracking.",
         techStack: ["WebSocket", "Node.js", "JavaScript", "CSS"],
-        link: "",
-        githubLink: "https://github.com/LukeManyamazi",
+        link: "https://luke-chat-app-frontend.hosting.codeyourfuture.io/",
+        githubLink: "https://github.com/Luke-Manyamazi/Chat-App",
     },
     {
         id: 4,
         title: "Quote Generator",
         description: "Custom backend API fetching random quotes with optimized routes, reducing latency by 20%.",
         techStack: ["Node.js", "JavaScript", "Express"],
-        link: "",
-        githubLink: "https://github.com/LukeManyamazi",
+        link: "https://luke-quote-app-frontend.hosting.codeyourfuture.io/",
+        githubLink: "https://github.com/Luke-Manyamazi/Quote-App",
     }
 ];
 
