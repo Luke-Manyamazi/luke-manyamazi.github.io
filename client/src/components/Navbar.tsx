@@ -58,7 +58,11 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
-          <a href="/resume.pdf" download="Luke_Manyamazi_Resume.pdf">
+          <a
+            href="/resume.pdf"
+            download="Luke_Manyamazi_Resume.pdf"
+            className="relative z-50 pointer-events-auto"
+          >
             <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/10 hover:text-primary font-mono text-xs">
               Resume
             </Button>
