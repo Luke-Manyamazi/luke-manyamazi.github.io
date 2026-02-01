@@ -12,13 +12,13 @@ export function Projects() {
       <SectionHeader title="Select Projects" subtitle="Portfolio" />
 
       {isLoading ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {[1, 2, 3, 4].map((i) => (
             <Skeleton key={i} className="h-80 w-full bg-white/5 rounded-2xl" />
           ))}
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects?.map((project, idx) => (
             <motion.div
               key={project.id}
