@@ -9,7 +9,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="section-padding container mx-auto px-4 md:px-6 bg-secondary/20">
-      <SectionHeader title="Some Things I've Built" subtitle="Featured Projects" />
+      <SectionHeader title="Select Projects" subtitle="Portfolio" />
 
       {isLoading ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

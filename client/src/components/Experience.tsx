@@ -9,7 +9,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="section-padding container mx-auto px-4 md:px-6">
-      <SectionHeader title="Where I've Worked" subtitle="Experience" />
+      <SectionHeader title="Career Journey" subtitle="Experience" />
 
       <div className="max-w-4xl mx-auto relative">
         {/* Vertical Line */}
