@@ -30,9 +30,8 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className={`flex flex-col md:flex-row gap-8 ${
-                  idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Timeline Dot */}
                 <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 rounded-full bg-background border-2 border-primary z-10">
@@ -51,22 +50,25 @@ export function Experience() {
                     <h4 className="text-lg text-muted-foreground font-medium mb-6">
                       {job.company}
                     </h4>
-                    
-                    <div className="text-muted-foreground space-y-2 text-sm leading-relaxed">
-                      {job.description.split("\n").map((line, i) => (
-                        <p key={i}>{line.trim()}</p>
+
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-4">
+                      {job.description.map((point: string, index: number) => (
+                        <li key={index} className="text-sm leading-relaxed">
+                          {point}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </div>
-                
+
+
                 {/* Spacer for alignment */}
-                <div className="flex-1 hidden md:block" />
+                < div className="flex-1 hidden md:block" />
               </motion.div>
             ))}
           </div>
         )}
       </div>
-    </section>
+    </section >
   );
 }

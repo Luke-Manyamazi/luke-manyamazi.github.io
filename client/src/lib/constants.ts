@@ -58,17 +58,26 @@ export const PROJECTS = [
 export const EXPERIENCE = [
     {
         id: 1,
-        role: "Software & Deployment Specialist",
+        role: "Software & Applications Support",
         company: "Torga Optical",
         duration: "2020 – Present",
-        description: "Collaborate with developers on feature development and bug fixing. Conduct deployment testing for 170+ branches and created automation scripts for asset tracking.",
+        description: [
+            "Work directly with external developers on Torga Systems applications, assisting with feature development, bug fixing, and improvements.",
+            "Document and report software bugs, reproducing errors to facilitate quick resolution.",
+            "Support deployment of apps across branches, maintaining 99.9% uptime.",
+            "Conduct deployment testing to ensure smooth release of updates and new features across 170+ branches.",
+        ],
     },
     {
         id: 2,
         role: "IT Support Technician",
         company: "Torga Optical",
         duration: "2020 – Present",
-        description: "Maintain 18+ IT systems with 99.9% uptime. Reduced support requests by 30% through staff training.",
+        description: [
+            "Install, maintain, and troubleshoot 18+ IT systems and network assets.",
+            "Conduct staff training, reducing support requests by 30 %.",
+            "Provide onsite and remote IT support to 150 + stores",
+        ]
     }
 ];
 
@@ -76,24 +85,24 @@ export const EDUCATION = [
     // Degrees
     {
         id: 1,
-        degree: "BSc (Hons) Computer Engineering",
+        degree: "BSc (Hons) Computer Engineering Degree",
         institution: "Zimbabwe Open University",
         year: "Graduating 2027",
         type: "Degree",
     },
     {
         id: 2,
-        degree: "Software Developer",
+        degree: "Software Developer Certificate",
         institution: "CodeYourFuture",
         year: "Jan 2026",
-        type: "Bootcamp",
+        type: "Full Stack Developer Course",
     },
     // Certifications
     {
         id: 3,
-        degree: "CS50’s Introduction to Python",
+        degree: "CS50P - Introduction to Python",
         institution: "Harvard University",
-        year: "2024",
+        year: "Dec 2024",
         type: "Certificate",
     },
     {
