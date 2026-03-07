@@ -116,13 +116,5 @@ export const EDUCATION = [
         institution: "Coursera",
         year: "2023",
         type: "Certificate",
-    },
-    // Badges (Optional - can be included here)
-    {
-        id: 7,
-        degree: "Launch Module & SDC",
-        institution: "CodeYourFuture",
-        year: "2024",
-        type: "Badge",
     }
 ];
