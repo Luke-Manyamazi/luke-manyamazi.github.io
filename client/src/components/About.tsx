@@ -28,7 +28,7 @@ export function About() {
             </p>
             <p>
               When I'm not coding, you can find me exploring new tech trends, optimizing
-              workflows, or contributing to open-source projects.
+              workflows, or even checking out my little farm.
             </p>
           </motion.div>
 
