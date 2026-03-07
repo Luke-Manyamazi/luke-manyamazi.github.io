@@ -6,4 +6,5 @@ I am a software developer with a strong foundation in Python, JavaScript, and we
 
 This portfolio highlights some of the applications and projects I have built while learning and working in software development.
 
-🌐 Live Site: https://lukemanyamazi.github.io
+🌐 Live Site: https://luke-manyamazi.github.io
+
