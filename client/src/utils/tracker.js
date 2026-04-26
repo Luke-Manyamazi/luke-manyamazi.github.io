@@ -5,8 +5,8 @@ export function trackVisit(site, category) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      site,
-      category
+      site: "My Portfolio",
+      category: "Personal"
     })
   })
     .then(res => res.json())

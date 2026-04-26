@@ -17,7 +17,7 @@ function Router() {
 
 function App() {
   useEffect(() => {
-    trackVisit("portfolio", "PAGE_VIEW");
+    trackVisit("My Portfolio", "personal");
   }, []);
 
   return (
