@@ -1,19 +1,14 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
-import { useToast } from "@/hooks/use-toast";
-import { Loader2, Mail, Phone, MapPin } from "lucide-react";
-
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Contact() {
-  const { toast } = useToast();
 
   return (
     <section id="contact" className="section-padding container mx-auto px-4 md:px-6 mb-20">
       <SectionHeader title="Get In Touch" subtitle="What's Next?" />
 
-      <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-        {/* Contact Info */}
+      <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

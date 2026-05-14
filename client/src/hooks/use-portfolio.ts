@@ -1,6 +1,5 @@
 import { PROJECTS, SKILLS, EXPERIENCE, EDUCATION } from "@/lib/constants";
 
-// This tells the frontend "The data is ready, don't look at the database"
 export function useProjects() {
   return { data: PROJECTS, isLoading: false };
 }

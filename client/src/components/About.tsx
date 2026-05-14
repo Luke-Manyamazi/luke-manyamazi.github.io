@@ -7,14 +7,13 @@ export function About() {
       <div className="max-w-4xl mx-auto">
         <SectionHeader title="About Me" subtitle="Who I Am" />
 
-        <div className="grid md:grid-cols-5 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-3 prose prose-invert prose-lg text-muted-foreground leading-relaxed"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="prose prose-invert prose-lg text-muted-foreground leading-relaxed"
+        >
             <p className="mb-6">
               I am a passionate and versatile Software Developer with a robust background in
               Systems Administration. My journey in tech has equipped me with a unique
@@ -30,10 +29,7 @@ export function About() {
               When I'm not coding, you can find me exploring new tech trends, optimizing
               workflows, or even checking out my little farm.
             </p>
-          </motion.div>
-
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -80,9 +80,7 @@ export function Hero() {
           >
             {/* Gradient Merge */}
             <div className="relative w-full h-full bg-gradient-to-b from-primary/20 to-transparent rounded-2xl overflow-hidden group">
-              <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-primary/30 rounded-2xl">
-                <span className="text-primary/50 font-mono text-sm"></span>
-              </div>
+              <div className="absolute inset-0 border-2 border-dashed border-primary/30 rounded-2xl" />
 
 
               {<img
