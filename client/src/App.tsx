@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import { trackVisit } from "@/utils/tracker";
+//import { trackVisit } from "@/utils/tracker";
 
 function Router() {
   return (
@@ -17,7 +17,7 @@ function Router() {
 
 function App() {
   useEffect(() => {
-    trackVisit("My Portfolio", "personal");
+    // trackVisit("My Portfolio", "personal");
   }, []);
 
   return (
