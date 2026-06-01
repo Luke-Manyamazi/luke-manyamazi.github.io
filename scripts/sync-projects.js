@@ -1,6 +1,7 @@
 import { Octokit } from "@octokit/rest";
 import fs from "fs";
 import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
@@ -98,7 +99,10 @@ async function main() {
     projects,
   };
 
-  fs.writeFileSync("./data/projects.json", JSON.stringify(output, null, 2));
+  const filePath = path.resolve("data/projects.json");
+
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, JSON.stringify(output, null, 2));
 
   console.log(`Generated ${projects.length} projects`);
 }
