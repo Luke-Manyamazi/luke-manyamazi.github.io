@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T14:07:56.376Z",
+  "generatedAt": "2026-06-14T19:39:53.172Z",
   "projects": [
     {
       "id": 1068674653,
@@ -46,8 +46,8 @@
       "githubLink": "https://github.com/Luke-Manyamazi/Chenesa",
       "deployedUrl": "https://chenesa.vercel.app",
       "status": "shipped",
-      "language": "HTML",
-      "updated": "2026-05-24T20:11:19Z"
+      "language": "TypeScript",
+      "updated": "2026-06-14T19:16:11Z"
     },
     {
       "id": 1097121850,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-06-14T09:38:27Z"
+      "updated": "2026-06-14T14:08:00Z"
     },
     {
       "id": 936192526,
