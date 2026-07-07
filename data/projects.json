@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T14:39:32.730Z",
+  "generatedAt": "2026-07-07T19:58:01.508Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-07T09:45:43Z"
+      "updated": "2026-07-07T14:42:42Z"
     },
     {
       "id": 936192526,
@@ -195,6 +195,18 @@
       "status": "shipped",
       "language": "JavaScript",
       "updated": "2025-10-29T03:51:29Z"
+    },
+    {
+      "id": 1292548986,
+      "title": "lumiq-marketing",
+      "description": null,
+      "techStack": [],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/lumiq-marketing",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": "TypeScript",
+      "updated": "2026-07-07T16:07:54Z"
     },
     {
       "id": 877079056,
