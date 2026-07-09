@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T03:29:08.995Z",
+  "generatedAt": "2026-07-09T09:42:29.950Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-08T19:28:01Z"
+      "updated": "2026-07-09T03:29:13Z"
     },
     {
       "id": 936192526,
@@ -195,18 +195,6 @@
       "status": "shipped",
       "language": "JavaScript",
       "updated": "2025-10-29T03:51:29Z"
-    },
-    {
-      "id": 1292548986,
-      "title": "lumiq-marketing",
-      "description": null,
-      "techStack": [],
-      "link": "",
-      "githubLink": "https://github.com/Luke-Manyamazi/lumiq-marketing",
-      "deployedUrl": null,
-      "status": "in-progress",
-      "language": "TypeScript",
-      "updated": "2026-07-07T16:07:54Z"
     },
     {
       "id": 877079056,
@@ -373,6 +361,18 @@
       "status": "in-progress",
       "language": null,
       "updated": "2026-01-24T08:08:45Z"
+    },
+    {
+      "id": 1292548986,
+      "title": "torga-visionai",
+      "description": null,
+      "techStack": [],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/torga-visionai",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": "TypeScript",
+      "updated": "2026-07-09T06:29:27Z"
     },
     {
       "id": 1061013570,
