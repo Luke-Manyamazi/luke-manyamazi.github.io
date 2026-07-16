@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T13:56:21.933Z",
+  "generatedAt": "2026-07-16T19:14:09.372Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-16T08:17:19Z"
+      "updated": "2026-07-16T13:57:06Z"
     },
     {
       "id": 936192526,
@@ -195,6 +195,18 @@
       "status": "shipped",
       "language": "JavaScript",
       "updated": "2025-10-29T03:51:29Z"
+    },
+    {
+      "id": 1302994967,
+      "title": "masvingo-tech",
+      "description": null,
+      "techStack": [],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/masvingo-tech",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": "HTML",
+      "updated": "2026-07-16T16:37:35Z"
     },
     {
       "id": 877079056,
