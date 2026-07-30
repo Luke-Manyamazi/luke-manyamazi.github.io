@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:06:02.983Z",
+  "generatedAt": "2026-07-30T19:27:51.456Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-30T08:30:36Z"
+      "updated": "2026-07-30T14:10:15Z"
     },
     {
       "id": 936192526,
@@ -355,12 +355,12 @@
       "title": "rent-it",
       "description": "RentIT Masvingo, a web-first SaaS rental marketplace, with a Firebase + Supabase + Vercel backend split.",
       "techStack": [],
-      "link": "",
+      "link": "https://rent-it-alpha.vercel.app",
       "githubLink": "https://github.com/Luke-Manyamazi/rent-it",
-      "deployedUrl": null,
-      "status": "in-progress",
+      "deployedUrl": "https://rent-it-alpha.vercel.app",
+      "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-30T06:43:23Z"
+      "updated": "2026-07-30T19:17:43Z"
     },
     {
       "id": 1221647481,
