@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T15:04:00.586Z",
+  "generatedAt": "2026-08-19T18:37:23.867Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-08-19T14:59:06Z"
+      "updated": "2026-08-19T15:12:44Z"
     },
     {
       "id": 936192526,
@@ -207,6 +207,30 @@
       "status": "in-progress",
       "language": "HTML",
       "updated": "2026-07-30T06:43:07Z"
+    },
+    {
+      "id": 1339785007,
+      "title": "MrChow",
+      "description": "Shared backend API for Mr Chow food, grocery, delivery, WhatsApp, and online payments in Masvingo, Zimbabwe.",
+      "techStack": [
+        "ecocash",
+        "express",
+        "food-delivery",
+        "grocery-delivery",
+        "in-progress",
+        "masvingo",
+        "mrchow",
+        "paynow",
+        "prisma",
+        "whatsapp-cloud-api",
+        "zimbabwe"
+      ],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/MrChow",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": "JavaScript",
+      "updated": "2026-08-19T16:58:16Z"
     },
     {
       "id": 877079056,
