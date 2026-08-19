@@ -8,70 +8,115 @@
   :root {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-
     --card: 222 47% 14%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 142 71% 45%;
     --primary-foreground: 144 65% 10%;
-
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-
     --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217 33% 20%;
     --input: 217 33% 17%;
     --ring: 142 71% 45%;
-
     --radius: 0.5rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased scroll-smooth; }
+  h1, h2, h3, h4, h5, h6 { @apply font-sans tracking-tight; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-background; }
+  ::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-white/20; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-white/5 shadow-xl;
   }
-  body {
-    @apply bg-background text-foreground font-sans antialiased scroll-smooth;
+
+  .glass-card-hover {
+    @apply glass-card hover:border-primary/20 hover:bg-card/70 transition-all duration-300;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight;
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-primary;
   }
-  
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
+
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-300;
   }
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
+
+  .section-padding {
+    @apply py-24 md:py-32;
   }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-full;
+
+  .section-band {
+    @apply bg-secondary/20;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+
+  .stat-card {
+    @apply glass-card rounded-2xl p-5 flex flex-col gap-1;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-mono
+           bg-primary/10 text-primary border border-primary/20
+           hover:bg-primary/20 transition-colors cursor-default;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 60px -10px hsl(142 71% 45% / 0.4);
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(142 71% 45% / 0.4), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
 
-.glass-card {
-  @apply bg-card/50 backdrop-blur-md border border-white/5 shadow-xl;
+/* Animated scroll indicator */
+@keyframes scroll-down {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(8px); opacity: 0; }
 }
+.scroll-indicator { animation: scroll-down 1.5s ease infinite; }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-primary;
+/* Subtle noise texture overlay */
+.noise-overlay {
+  position: relative;
 }
-
-.section-padding {
-  @apply py-20 md:py-32;
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
 }

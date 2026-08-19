@@ -1,50 +1,58 @@
 import { motion } from "framer-motion";
+import { SectionHeader } from "./SectionHeader";
 import { useEducation } from "@/hooks/use-portfolio";
 import { Skeleton } from "@/components/ui/skeleton";
-import { GraduationCap } from "lucide-react";
+
+const TYPE_STYLES: Record<string, string> = {
+  Degree:      "bg-primary/15 text-primary border-primary/25",
+  Course:      "bg-blue-500/15 text-blue-400 border-blue-500/25",
+  Certificate: "bg-purple-500/15 text-purple-400 border-purple-500/25",
+  AWS:         "bg-orange-500/15 text-orange-400 border-orange-500/25",
+};
 
 export function Education() {
   const { data: education, isLoading } = useEducation();
 
   return (
     <section id="education" className="section-padding container mx-auto px-4 md:px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <GraduationCap className="text-primary h-8 w-8" />
-          <h2 className="text-2xl font-bold text-white">Education & Certifications</h2>
-        </div>
+      <SectionHeader title="Education & Certs" subtitle="Learning" />
 
-        {isLoading ? (
-          <div className="space-y-4">
-            <Skeleton className="h-20 w-full bg-white/5 rounded-xl" />
-            <Skeleton className="h-20 w-full bg-white/5 rounded-xl" />
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 gap-6">
-            {education?.map((edu, idx) => (
-              <motion.div
-                key={edu.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card border border-white/5 p-6 rounded-xl hover:border-primary/20 transition-colors"
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-xs font-mono text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">
-                    {edu.type}
-                  </span>
-                  <span className="text-sm text-muted-foreground font-mono">
-                    {edu.year}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">{edu.degree}</h3>
-                <p className="text-muted-foreground text-sm">{edu.institution}</p>
-              </motion.div>
-            ))}
-          </div>
-        )}
-      </div>
+      {isLoading ? (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <Skeleton key={i} className="h-36 w-full bg-white/5 rounded-2xl" />
+          ))}
+        </div>
+      ) : (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {education?.map((edu, idx) => (
+            <motion.div
+              key={edu.id}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.07 }}
+              className="glass-card-hover gradient-border rounded-2xl p-5 flex flex-col gap-3"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span
+                  className={`text-[11px] font-mono px-2.5 py-1 rounded-full border ${
+                    TYPE_STYLES[edu.type] ?? TYPE_STYLES.Certificate
+                  }`}
+                >
+                  {edu.type}
+                </span>
+                <span className="text-xs text-muted-foreground font-mono">{edu.year}</span>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold text-white leading-snug">{edu.degree}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{edu.institution}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

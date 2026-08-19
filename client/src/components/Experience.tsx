@@ -1,71 +1,122 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import { useExperience } from "@/hooks/use-portfolio";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Briefcase } from "lucide-react";
+import { MapPin, ChevronDown, ChevronUp, Briefcase } from "lucide-react";
+
+const TYPE_COLORS: Record<string, string> = {
+  "full-time": "bg-primary/10 text-primary border-primary/20",
+};
 
 export function Experience() {
-  const { data: experience, isLoading } = useExperience();
+  const { data: experience } = useExperience();
+  const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
     <section id="experience" className="section-padding container mx-auto px-4 md:px-6">
       <SectionHeader title="Career Journey" subtitle="Experience" />
 
-      <div className="max-w-4xl mx-auto relative">
-        {/* Vertical Line */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
+      <div className="max-w-3xl mx-auto">
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent hidden sm:block" />
 
-        {isLoading ? (
-          <div className="space-y-12">
-            {[1, 2].map((i) => (
-              <Skeleton key={i} className="h-64 w-full bg-white/5 rounded-2xl" />
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-12 md:space-y-24">
-            {experience?.map((job, idx) => (
-              <motion.div
-                key={job.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className={`flex flex-col md:flex-row gap-8 ${
-                  idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 rounded-full bg-background border-2 border-primary z-10">
-                  <Briefcase size={14} className="text-primary" />
-                </div>
+          <div className="space-y-4">
+            {experience?.map((job, idx) => {
+              const isOpen = expanded === idx;
+              const bullets = job.description.split("\n").filter(Boolean);
 
-                {/* Content */}
-                <div className={`flex-1 ${idx % 2 === 0 ? "md:text-right" : ""}`}>
-                  <div className="glass-card p-6 md:p-8 rounded-2xl hover:border-primary/30 transition-colors group">
-                    <span className="font-mono text-sm text-primary mb-2 block">
-                      {job.duration}
-                    </span>
-                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
-                      {job.role}
-                    </h3>
-                    <h4 className="text-lg text-muted-foreground font-medium mb-6">
-                      {job.company}
-                    </h4>
-                    
-                    <div className="text-muted-foreground space-y-2 text-sm leading-relaxed">
-                      {job.description.split("\n").map((line, i) => (
-                        <p key={i}>{line.trim()}</p>
-                      ))}
+              return (
+                <motion.div
+                  key={job.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="flex gap-5"
+                >
+                  {/* Timeline dot */}
+                  <div className="hidden sm:flex flex-col items-center flex-shrink-0 mt-5">
+                    <div
+                      className={`w-10 h-10 rounded-full border-2 flex items-center justify-center z-10 transition-colors duration-300 ${
+                        isOpen ? "border-primary bg-primary/15" : "border-white/15 bg-background"
+                      }`}
+                    >
+                      <Briefcase size={14} className={isOpen ? "text-primary" : "text-muted-foreground"} />
                     </div>
                   </div>
-                </div>
-                
-                {/* Spacer for alignment */}
-                <div className="flex-1 hidden md:block" />
-              </motion.div>
-            ))}
+
+                  {/* Card */}
+                  <div
+                    className={`flex-1 glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
+                      isOpen ? "border-primary/20" : "hover:border-white/10"
+                    }`}
+                  >
+                    {/* Header — always visible */}
+                    <button
+                      onClick={() => setExpanded(isOpen ? null : idx)}
+                      className="w-full text-left p-5 md:p-6"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <span className="font-mono text-xs text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
+                              {job.duration}
+                            </span>
+                            {(job as { type?: string }).type && (
+                              <span className={`font-mono text-[11px] px-2 py-0.5 rounded-full border ${TYPE_COLORS["full-time"]}`}>
+                                Full-time
+                              </span>
+                            )}
+                          </div>
+                          <h3 className="text-base md:text-lg font-bold text-white leading-snug">
+                            {job.role}
+                          </h3>
+                          <div className="flex items-center gap-1.5 mt-1">
+                            <MapPin size={12} className="text-primary/50 flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">
+                              {job.company}
+                              {(job as { location?: string }).location && (
+                                <span className="text-muted-foreground/50"> · {(job as { location?: string }).location}</span>
+                              )}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 mt-1 text-muted-foreground">
+                          {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </div>
+                      </div>
+                    </button>
+
+                    {/* Expanded bullets */}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0 border-t border-white/5">
+                            <ul className="space-y-2.5 mt-4">
+                              {bullets.map((line, i) => (
+                                <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
+                                  <span className="text-primary/40 mt-1.5 flex-shrink-0 text-xs">▸</span>
+                                  {line.trim()}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

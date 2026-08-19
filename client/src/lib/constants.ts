@@ -1,145 +1,162 @@
-// client/src/lib/constants.ts
-
 export const SKILLS = [
   // Languages
-  { id: 1, name: "JavaScript", category: "Languages" },
-  { id: 2, name: "Python", category: "Languages" },
-  { id: 3, name: "TypeScript", category: "Languages" },
-  { id: 4, name: "Java", category: "Languages" },
-  { id: 5, name: "C/C++/C#", category: "Languages" },
-  // Frameworks/Libraries
-  { id: 6, name: "React", category: "Frameworks" },
-  { id: 7, name: "Node.js", category: "Frameworks" },
-  { id: 8, name: "Express.js", category: "Frameworks" },
-  { id: 9, name: "Tailwind CSS", category: "Frameworks" },
-  { id: 16, name: "Flask", category: "Frameworks" },
+  { id: 1,  name: "JavaScript (ES6+)", category: "Languages" },
+  { id: 2,  name: "TypeScript",         category: "Languages" },
+  { id: 3,  name: "Python",             category: "Languages" },
+  { id: 4,  name: "Java",               category: "Languages" },
+  { id: 5,  name: "C#",                 category: "Languages" },
+  { id: 6,  name: "PHP",                category: "Languages" },
+  { id: 7,  name: "HTML5",              category: "Languages" },
+  { id: 8,  name: "CSS3",               category: "Languages" },
+  // Frameworks & Libraries
+  { id: 9,  name: "React",              category: "Frameworks" },
+  { id: 10, name: "Node.js",            category: "Frameworks" },
+  { id: 11, name: "Express.js",         category: "Frameworks" },
+  { id: 12, name: "Tailwind CSS",       category: "Frameworks" },
+  { id: 13, name: "Bootstrap",          category: "Frameworks" },
+  { id: 14, name: "Socket.io",          category: "Frameworks" },
+  { id: 15, name: "Flask",              category: "Frameworks" },
   // Databases & Cloud
-  { id: 10, name: "MySQL", category: "Backend" },
-  { id: 11, name: "PostgreSQL", category: "Backend" },
-  { id: 12, name: "Firebase", category: "Backend" },
-  { id: 13, name: "AWS", category: "Cloud" },
-  { id: 14, name: "Google Cloud", category: "Cloud" },
-  { id: 15, name: "Azure", category: "Cloud" },
+  { id: 16, name: "PostgreSQL",         category: "Databases & Cloud" },
+  { id: 17, name: "MySQL",              category: "Databases & Cloud" },
+  { id: 18, name: "Firebase",           category: "Databases & Cloud" },
+  { id: 19, name: "AWS",                category: "Databases & Cloud" },
+  { id: 20, name: "Google Cloud",       category: "Databases & Cloud" },
+  // Tools & Methods
+  { id: 21, name: "Git & GitHub",       category: "Tools & Methods" },
+  { id: 22, name: "REST APIs",          category: "Tools & Methods" },
+  { id: 23, name: "Postman",            category: "Tools & Methods" },
+  { id: 24, name: "Agile / Scrum",      category: "Tools & Methods" },
+  { id: 25, name: "UAT",                category: "Tools & Methods" },
+  { id: 26, name: "Microsoft 365",      category: "Tools & Methods" },
+  { id: 27, name: "Software Deployment",category: "Tools & Methods" },
+  { id: 28, name: "Systems Administration", category: "Tools & Methods" },
 ];
 
 export const PROJECTS = [
   {
     id: 1,
     title: "CYFOverflow",
-    description:
-      "A Q&A platform enabling question posting, answering, and discussions. Features API-driven data fetching and dynamic rendering.",
-    techStack: ["JavaScript", "HTML", "CSS", "REST APIs"],
+    description: "Full-stack Q&A platform enabling question posting, answering, and voting on technical questions. Built with RESTful APIs, PostgreSQL, and mobile-first WCAG-accessible UI.",
+    techStack: ["React", "Node.js", "PostgreSQL", "REST APIs"],
     link: "https://cyfoverflow.hosting.codeyourfuture.io/",
     githubLink: "https://github.com/Luke-Manyamazi/CYFoverflow",
   },
   {
     id: 2,
     title: "Pop & Chill TV Explorer",
-    description:
-      "TV Show finder using TMDB API with YouTube trailer integration. Improved API response and rendering efficiency by 35%.",
-    techStack: ["JavaScript", "TMDB API", "YouTube Integration", "Netlify"],
+    description: "Media discovery app with live search, TMDB + YouTube API integration, and trailer playback. Optimised API response handling, improving rendering efficiency by 35%.",
+    techStack: ["JavaScript", "TMDB API", "YouTube API", "CSS3"],
     link: "https://popandchill.netlify.app/",
-    githubLink:
-      "https://github.com/Luke-Manyamazi/Pop-and-Chill-Movie-Explorer-App",
+    githubLink: "https://github.com/Luke-Manyamazi/Pop-and-Chill-Movie-Explorer-App",
   },
   {
     id: 3,
     title: "Real-Time Group Chat",
-    description:
-      "Instant messaging app using WebSockets for live updates and online user tracking.",
-    techStack: ["WebSocket", "Node.js", "JavaScript", "CSS"],
+    description: "WebSocket-powered messaging app with instant communication, online user tracking, and polling fallback for reliability. Event-driven Node.js backend.",
+    techStack: ["Node.js", "Socket.io", "Express.js", "JavaScript"],
     link: "https://luke-chat-app-frontend.hosting.codeyourfuture.io/",
     githubLink: "https://github.com/Luke-Manyamazi/Chat-App",
   },
   {
     id: 4,
-    title: "Quote Generator",
-    description:
-      "Custom backend API fetching random quotes with optimized routes, reducing latency by 20%.",
-    techStack: ["Node.js", "JavaScript", "Express"],
-    link: "https://luke-quote-app-frontend.hosting.codeyourfuture.io/",
-    githubLink: "https://github.com/Luke-Manyamazi/Quote-App",
+    title: "Ipalo Shop",
+    description: "Modern e-commerce storefront with product listings, cart management, and a clean responsive UI built with TypeScript and deployed on Vercel.",
+    techStack: ["TypeScript", "React", "Tailwind CSS", "Vercel"],
+    link: "https://ipalo-shop.vercel.app",
+    githubLink: "https://github.com/Luke-Manyamazi/ipalo-shop",
   },
   {
     id: 5,
-    title: "Camluk Technologies",
-    description:
-      "Business website showcasing digital services, branding solutions, and modern responsive UI for client engagement.",
-    techStack: ["React", "Tailwind CSS", "JavaScript"],
-    link: "https://camluk.co.za/",
-    githubLink: "https://github.com/Luke-Manyamazi/camluk_website.git",
+    title: "NuSite",
+    description: "AI-powered website transformation engine that converts static HTML sites into modern React applications. Features a landing page, dashboard, billing, and deployment workflow.",
+    techStack: ["React", "JavaScript", "AI", "SaaS"],
+    link: "https://nusite-landing.netlify.app",
+    githubLink: "https://github.com/Luke-Manyamazi/nusite",
   },
   {
     id: 6,
-    title: "Dinas Day Care",
-    description:
-      "Responsive daycare website featuring service information, gallery sections, and a clean parent-friendly interface.",
-    techStack: ["React", "Tailwind CSS", "Framer Motion"],
-    link: "https://dinasgroup.co.za/",
-    githubLink: "https://github.com/Luke-Manyamazi/dinasgroup-website.git",
+    title: "Camluk Technologies",
+    description: "Business website for a digital services company. Showcases branding solutions and services with a modern, responsive UI.",
+    techStack: ["React", "Tailwind CSS", "JavaScript"],
+    link: "https://camluk.co.za/",
+    githubLink: "https://github.com/Luke-Manyamazi/camluk_website",
   },
   {
     id: 7,
-    title: "Boroma Hills",
-    description:
-      "Modern real estate platform designed to present residential development projects with interactive sections and smooth navigation.",
+    title: "Zimbabwe Consulate CPT",
+    description: "Modern website redesign for the Zimbabwe Consulate Cape Town — built with React, Tailwind CSS, and Framer Motion for smooth transitions.",
     techStack: ["React", "Tailwind CSS", "Framer Motion"],
-    link: "https://boroma-hills.netlify.app/",
-    githubLink: "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-.git",
+    link: "",
+    githubLink: "https://github.com/Luke-Manyamazi/zimconsulatecpt-website",
   },
   {
     id: 8,
-    title: "My Portfolio",
-    description:
-      "Personal developer portfolio highlighting projects, technical skills, certifications, and deployed applications with a modern UI.",
-    techStack: ["React", "Tailwind CSS", "JavaScript"],
-    link: "https://luke-manyamazi.github.io/",
-    githubLink: "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io.git",
+    title: "Boroma Hills",
+    description: "Real estate platform presenting a residential development project with interactive sections, image galleries, and smooth navigation.",
+    techStack: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://boroma-hills.netlify.app/",
+    githubLink: "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
   },
 ];
 
 export const EXPERIENCE = [
   {
     id: 1,
-    role: "Software & Deployment Specialist",
-    company: "Torga Optical",
-    duration: "2020 – Present",
+    role: "Software & Application Support Specialist",
+    company: "Torga Optical Lens Manufacturing",
+    location: "Cape Town, South Africa",
+    duration: "2023 – Present",
+    type: "full-time",
     description:
-      "Collaborate with developers on feature development and bug fixing. Conduct deployment testing for 170+ branches and created automation scripts for asset tracking.",
+      "Collaborate with external software developers to support and enhance proprietary business applications used across 170+ branches, reducing critical issue resolution times by 25%.\nManage deployment testing and software release cycles across 170+ branches, ensuring zero-downtime transitions and business continuity.\nDocument, reproduce, and track software defects — partnering with developers to accelerate resolutions.\nIntegrate digital content solutions with marketing teams, increasing customer engagement by 30%.\nCoordinate User Acceptance Testing (UAT) for new software releases and system enhancements.\nMonitor application performance and drive process improvements across the branch network.\nCollaborate with business stakeholders to gather requirements and improve system functionality.",
   },
   {
     id: 2,
     role: "IT Support Technician",
-    company: "Torga Optical",
-    duration: "2020 – Present",
+    company: "Torga Optical Lens Manufacturing",
+    location: "Cape Town, South Africa",
+    duration: "2020 – 2023",
+    type: "full-time",
     description:
-      "Maintain 18+ IT systems with 99.9% uptime. Reduced support requests by 30% through staff training.",
+      "Maintained and troubleshot 18+ critical IT systems, sustaining 99.9% system uptime across all locations.\nDeveloped and delivered technical training programmes that reduced support tickets by 30%.\nConfigured and maintained workstations, printers, network devices, and Microsoft 365 environments.\nProvided first- and second-line technical support to staff across multiple locations.\nSupported software deployments, upgrades, and maintenance activities organisation-wide.\nDocumented technical procedures and troubleshooting guides to improve team support efficiency.\nAssisted with user account administration, security controls, and access management.",
+  },
+  {
+    id: 3,
+    role: "Provincial Vehicle Licensing Supervisor",
+    company: "Zimbabwe National Roads Administration (ZINARA)",
+    location: "Zimbabwe",
+    duration: "2013 – 2019",
+    type: "full-time",
+    description:
+      "Supervised daily vehicle licensing operations and ensured compliance with national regulations across the province.\nMonitored and maintained the ZIMLIC vehicle licensing system — ensuring reliable transaction processing and system availability.\nAdministered user accounts, permissions, and access controls within licensing and banking systems.\nIdentified, documented, and reported software defects, contributing to measurable improvements in system performance.\nProvided first-line technical support to licensing officers and administrative staff.\nGenerated operational, financial, and compliance reports for provincial management and regulatory stakeholders.\nTrained and supported staff on licensing systems, operational procedures, and technology platforms.",
   },
 ];
 
 export const EDUCATION = [
-  // Degrees
   {
     id: 1,
-    degree: "BSc (Hons) Computer Engineering",
+    degree: "BSc (Hons) Software Engineering",
     institution: "Zimbabwe Open University",
-    year: "Graduating 2027",
+    year: "Expected 2027",
     type: "Degree",
+    detail: "Currently in Year 3. Covering software architecture, engineering principles, networks, and systems design.",
   },
   {
     id: 2,
     degree: "Software Developer",
     institution: "CodeYourFuture",
-    year: "Jan 2026",
-    type: "Bootcamp",
+    year: "Completed Jan 2026",
+    type: "Course",
+    detail: "Full-stack programming course: JavaScript, React, Node.js, SQL, APIs, Agile, Git, pair programming, and real-world project delivery.",
   },
-  // Certifications
   {
     id: 3,
-    degree: "CS50’s Introduction to Python",
+    degree: "CS50's Introduction to Python",
     institution: "Harvard University",
     year: "2024",
     type: "Certificate",
+    detail: "",
   },
   {
     id: 4,
@@ -147,6 +164,7 @@ export const EDUCATION = [
     institution: "Amazon Web Services",
     year: "2024",
     type: "AWS",
+    detail: "",
   },
   {
     id: 5,
@@ -154,6 +172,7 @@ export const EDUCATION = [
     institution: "FreeCodeCamp",
     year: "2023",
     type: "Certificate",
+    detail: "",
   },
   {
     id: 6,
@@ -161,5 +180,6 @@ export const EDUCATION = [
     institution: "Coursera",
     year: "2023",
     type: "Certificate",
+    detail: "",
   },
 ];
