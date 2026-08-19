@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T06:46:03.594Z",
+  "generatedAt": "2026-08-19T12:49:58.809Z",
   "projects": [
     {
       "id": 1068674653,
@@ -182,7 +182,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-08-19T01:19:46Z"
+      "updated": "2026-08-19T06:46:53Z"
     },
     {
       "id": 936192526,
@@ -265,6 +265,18 @@
       "status": "in-progress",
       "language": "JavaScript",
       "updated": "2026-07-30T06:43:14Z"
+    },
+    {
+      "id": 1339504322,
+      "title": "platforms-dashboard",
+      "description": "Monitor the health of your cloud platforms, deployments, projects, and service dependencies from one dashboard.",
+      "techStack": [],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/platforms-dashboard",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": "TypeScript",
+      "updated": "2026-08-19T12:15:53Z"
     },
     {
       "id": 1043700273,
@@ -385,18 +397,6 @@
       "status": "in-progress",
       "language": null,
       "updated": "2026-01-24T08:08:45Z"
-    },
-    {
-      "id": 1292548986,
-      "title": "torga-visionai",
-      "description": "Marketing site and live demo for VisionAI, Torga Optical's AI lens-recommendation tool for partner store staff.",
-      "techStack": [],
-      "link": "",
-      "githubLink": "https://github.com/Luke-Manyamazi/torga-visionai",
-      "deployedUrl": null,
-      "status": "in-progress",
-      "language": "TypeScript",
-      "updated": "2026-07-30T06:43:30Z"
     },
     {
       "id": 1061013570,
