@@ -127,10 +127,9 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl mb-8"
             >
-              Full-stack developer and IT specialist based in{" "}
-              <span className="text-white font-medium">Cape Town, South Africa</span>.
-              Building modern web applications and keeping enterprise systems
-              running across 170+ branches.
+              Full-stack software developer specializing in modern web applications and
+              cloud solutions. Currently pursuing a BSc Honours in Software Engineering,
+              with 10+ years of hands-on enterprise IT experience.
             </motion.p>
 
             {/* Live GitHub stats */}
