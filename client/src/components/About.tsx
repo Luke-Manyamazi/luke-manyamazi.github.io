@@ -77,28 +77,48 @@ export function About() {
             className="space-y-5 text-muted-foreground text-base md:text-[17px] leading-[1.8]"
           >
             <p>
-              I'm a software developer and IT specialist based in{" "}
-              <strong className="text-white font-medium">Cape Town, South Africa</strong>, with
-              over a decade of experience bridging the gap between development and operations.
-              I write code that works, and I keep the infrastructure it runs on healthy.
-            </p>
-            <p>
-              Since 2020, I've been embedded at Torga Optical — first maintaining 18+ enterprise
-              systems across the organisation, then moving into an application support role where
-              I manage software deployments across{" "}
-              <strong className="text-white font-medium">170+ branches</strong>, coordinate UAT,
-              and collaborate directly with external developers to resolve defects and ship
-              improvements.
-            </p>
-            <p>
-              Outside of Torga I build client websites, SaaS tools, and open-source projects.
-              I completed CodeYourFuture's intensive full-stack programme in 2026, and I'm
-              currently in Year 3 of a BSc (Hons) in Computer Engineering.
-            </p>
-            <p>
-              When I step away from the screen there's a small farm waiting for me — good
-              for perspective.
-            </p>
+  					I'm a full-stack software developer with over a decade of hands-on experience
+  					in enterprise IT, combining software engineering with a strong understanding
+  					of the systems and infrastructure that power modern businesses.
+						</p>
+
+						<p>
+  					I'm currently pursuing a{" "}
+  					<strong className="text-white font-medium">BSc Honours in Software Engineering</strong>{" "}
+  					while building modern web applications, SaaS platforms, and business solutions
+  					for clients and personal projects. My development work spans technologies
+  					including React, TypeScript, Node.js, Python, PostgreSQL, and cloud platforms.
+						</p>
+
+						<p>
+  					My professional background includes extensive experience supporting enterprise
+					  technology at scale. At Torga Optical, I've worked across software,
+  					infrastructure, networking, application support, deployments, and user support,
+  					contributing to technology operations across{" "}
+  					<strong className="text-white font-medium">170+ branches</strong>. This experience
+  					has given me a practical understanding of how software needs to perform in
+  					real business environments — not just in development.
+						</p>
+
+						<p>
+  					I also completed{" "}
+  					<strong className="text-white font-medium">
+    				CodeYourFuture's intensive full-stack development programme
+  					</strong>
+  					, strengthening my foundation in modern software engineering and collaborative
+  					development practices.
+						</p>
+
+						<p>
+  					I enjoy turning real-world problems into practical software solutions, from
+  					business applications and SaaS platforms to tools that improve everyday
+  					workflows.
+						</p>
+
+						<p>
+  					When I'm away from the keyboard, I spend time working on a small farm — a
+  					welcome change of pace and a reminder that not everything needs a screen.
+						</p>
           </motion.div>
         </div>
 
