@@ -38,7 +38,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://lukemanyamazi-portfolio-258274811284-af-south-1-an \
+          aws s3 sync dist/public/ s3://lukemanyamazi-portfolio-258274811284-af-south-1-an \
             --delete
 
       - name: Invalidate CloudFront cache
