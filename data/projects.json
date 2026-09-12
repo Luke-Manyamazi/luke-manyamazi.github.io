@@ -1,113 +1,157 @@
 {
-  "generatedAt": "2026-09-12T10:16:36.855Z",
+  "generatedAt": "2026-09-12T15:11:18.579Z",
   "projects": [
+    {
+      "id": 1356101878,
+      "title": "BH-Farm-OS",
+      "description": "Farm management platform for tracking livestock, inventory, tasks, finances, alerts, and day-to-day agricultural operations.",
+      "techStack": [
+        "inprogress"
+      ],
+      "link": "https://bh-farm-os.vercel.app",
+      "githubLink": "https://github.com/Luke-Manyamazi/BH-Farm-OS",
+      "deployedUrl": "https://bh-farm-os.vercel.app",
+      "status": "shipped",
+      "language": "TypeScript",
+      "updated": "2026-09-12T14:02:32Z"
+    },
     {
       "id": 1068674653,
       "title": "Boroma-Hills-Website-",
       "description": "Official website for Boroma Hills, a sustainable-agriculture and faith-driven community project. React, Tailwind, Framer Motion.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "deployedUrl": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-30T06:42:47Z"
+      "updated": "2026-09-12T11:51:08Z"
+    },
+    {
+      "id": 1367353510,
+      "title": "camluk-whatsapp-commerce",
+      "description": "WhatsApp-first AI business assistant for Camluk Technologies — turning customer conversations into leads, enquiries, and service requests.",
+      "techStack": [],
+      "link": "",
+      "githubLink": "https://github.com/Luke-Manyamazi/camluk-whatsapp-commerce",
+      "deployedUrl": null,
+      "status": "in-progress",
+      "language": null,
+      "updated": "2026-09-12T14:07:44Z"
     },
     {
       "id": 1199753729,
       "title": "camluk_website",
       "description": "Camluk Technologies' business site (React/Vite) plus an academy sub-app with Firebase auth, quizzes, certificates, and PayFast payments.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/camluk_website",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-10T13:36:22Z"
+      "updated": "2026-09-12T11:50:42Z"
     },
     {
       "id": 1046949105,
       "title": "Chat-App",
       "description": "Real-time chat web app with WebSocket messaging, reactions, and online-user presence. Node.js, Express, WebSockets.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Chat-App",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:42:49Z"
+      "updated": "2026-09-12T11:50:43Z"
     },
     {
       "id": 1247573899,
       "title": "Chenesa",
       "description": "AI email cleaner SaaS that automatically tidies any inbox (Gmail, Outlook, Yahoo, iCloud, IMAP). Next.js, FastAPI, Supabase.",
-      "techStack": [],
+      "techStack": [
+        "saas-project"
+      ],
       "link": "https://chenesa.vercel.app",
       "githubLink": "https://github.com/Luke-Manyamazi/Chenesa",
       "deployedUrl": "https://chenesa.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-30T06:42:51Z"
+      "updated": "2026-09-12T11:51:06Z"
     },
     {
       "id": 1097121850,
       "title": "CYFoverflow",
       "description": "Q&A Website",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "https://cyfoverflow.hosting.codeyourfuture.io",
       "githubLink": "https://github.com/Luke-Manyamazi/CYFoverflow",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-02-15T16:12:12Z"
+      "updated": "2026-09-12T11:51:38Z"
     },
     {
       "id": 1140616321,
       "title": "family-tree",
       "description": "Full-stack genealogy app: Node/Express/Knex/Postgres backend with JWT auth and a React frontend rendering an interactive family tree.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/family-tree",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:42:55Z"
+      "updated": "2026-09-12T11:51:42Z"
     },
     {
       "id": 1107830160,
       "title": "fitter-dashboard",
       "description": "Real-time TV dashboard tracking jobs completed per fitter in the optical lab, for shop-floor visibility. React, Node/Express.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/fitter-dashboard",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:42:56Z"
+      "updated": "2026-09-12T11:50:29Z"
     },
     {
       "id": 983137329,
       "title": "GCC-Web",
       "description": "Earlier static HTML/CSS/JS prototype of the Grace Chapter Church website, superseded by Grace-Chapter-Church-Web.",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/GCC-Web",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-07-30T06:42:57Z"
+      "updated": "2026-09-12T11:50:37Z"
     },
     {
       "id": 1241673035,
       "title": "Grace-Chapter-Church-Web",
       "description": "Official website for Grace Chapter Church, with a YouTube-powered live sermons feed. React, Vite, Tailwind, shadcn/ui.",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Grace-Chapter-Church-Web",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:42:58Z"
+      "updated": "2026-09-12T11:50:58Z"
     },
     {
       "id": 1113935398,
@@ -137,25 +181,29 @@
       "id": 1249471287,
       "title": "ipalo-shop",
       "description": "ipalo, a premium lifestyle clothing and accessories storefront for South Africa. Next.js, Supabase, Prisma, PayFast payments.",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "https://ipalo-shop.vercel.app",
       "githubLink": "https://github.com/Luke-Manyamazi/ipalo-shop",
       "deployedUrl": "https://ipalo-shop.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-30T06:43:03Z"
+      "updated": "2026-09-12T11:50:52Z"
     },
     {
       "id": 1059505210,
       "title": "iSolveAI",
       "description": "Chrome extension that helps IT technicians troubleshoot error messages instantly, powered by Google Gemini or a backend AI fallback.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/iSolveAI",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:02Z"
+      "updated": "2026-09-12T11:51:00Z"
     },
     {
       "id": 867261849,
@@ -163,26 +211,29 @@
       "description": "Config files for my GitHub profile.",
       "techStack": [
         "config",
-        "github-config"
+        "github-config",
+        "profile"
       ],
       "link": "https://github.com/Luke-Manyamazi",
       "githubLink": "https://github.com/Luke-Manyamazi/Luke-Manyamazi",
       "deployedUrl": "https://github.com/Luke-Manyamazi/Luke-Manyamazi",
       "status": "shipped",
       "language": "HTML",
-      "updated": "2026-08-19T13:21:45Z"
+      "updated": "2026-09-12T11:51:35Z"
     },
     {
       "id": 1147442070,
       "title": "luke-manyamazi.github.io",
       "description": "Personal portfolio site showcasing my software development projects, skills, and learning journey.",
-      "techStack": [],
+      "techStack": [
+        "profile"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T03:39:11Z"
+      "updated": "2026-09-12T11:51:16Z"
     },
     {
       "id": 936192526,
@@ -200,13 +251,15 @@
       "id": 1302994967,
       "title": "masvingo-tech",
       "description": "Landing page for Masvingo Tech Community, connecting developers, students, and entrepreneurs across Masvingo Province, Zimbabwe.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/masvingo-tech",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-07-30T06:43:07Z"
+      "updated": "2026-09-12T11:50:54Z"
     },
     {
       "id": 1339785007,
@@ -218,6 +271,7 @@
         "food-delivery",
         "grocery-delivery",
         "in-progress",
+        "inprogress",
         "masvingo",
         "mrchow",
         "paynow",
@@ -230,31 +284,35 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-08-19T16:58:16Z"
+      "updated": "2026-09-12T11:51:39Z"
     },
     {
       "id": 877079056,
       "title": "My-CS50P-Projects",
       "description": "This repository contains a collection of Python projects I completed during the CS50P course. Each project tackles a different concept or problem, demonstrating programming techniques, algorithms, and Pythonic practices learned throughout the course.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/My-CS50P-Projects",
       "deployedUrl": null,
       "status": "learning",
       "language": null,
-      "updated": "2024-10-23T03:44:32Z"
+      "updated": "2026-09-12T11:50:51Z"
     },
     {
       "id": 937292023,
       "title": "numSorter",
       "description": "Small JS exercise: pick numbers from dropdowns and sort them, with bubble/selection/insertion sort reference implementations.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/numSorter",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-07-30T06:43:13Z"
+      "updated": "2026-09-12T11:50:25Z"
     },
     {
       "id": 1235591614,
@@ -268,6 +326,7 @@
         "landing-page",
         "react",
         "saas",
+        "saas-project",
         "web-modernization",
         "website-builder"
       ],
@@ -276,103 +335,119 @@
       "deployedUrl": "https://nusite-landing.netlify.app",
       "status": "shipped",
       "language": "HTML",
-      "updated": "2026-05-31T17:44:39Z"
+      "updated": "2026-09-12T11:51:23Z"
     },
     {
       "id": 985733250,
       "title": "Piscine-Prep",
       "description": "JavaScript fundamentals refresher exercises to prepare for CodeYourFuture's Piscine module.",
-      "techStack": [],
+      "techStack": [
+        "codeyourfuture"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Piscine-Prep",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:14Z"
+      "updated": "2026-09-12T11:50:46Z"
     },
     {
       "id": 1339504322,
       "title": "platforms-dashboard",
       "description": "Monitor the health of your cloud platforms, deployments, projects, and service dependencies from one dashboard.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/platforms-dashboard",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "TypeScript",
-      "updated": "2026-08-19T12:15:53Z"
+      "updated": "2026-09-12T11:51:40Z"
     },
     {
       "id": 1043700273,
       "title": "Pop-and-Chill-Movie-Explorer-App",
       "description": "React/Vite movie and TV explorer with search, recommendations, streaming availability, and watchlists, via the TMDB API.",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Pop-and-Chill-Movie-Explorer-App",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:15Z"
+      "updated": "2026-09-12T11:50:55Z"
     },
     {
       "id": 1033006623,
       "title": "Prepaid_Water_eTopUp",
       "description": "Prepaid water e-top-up app.",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Prepaid_Water_eTopUp",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:16Z"
+      "updated": "2026-09-12T11:50:24Z"
     },
     {
       "id": 1132958309,
       "title": "Prison-Inmate-Management-System",
       "description": "Prison Inmate Management System",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Prison-Inmate-Management-System",
       "deployedUrl": null,
       "status": "in-progress",
       "language": null,
-      "updated": "2026-07-30T05:43:09Z"
+      "updated": "2026-09-12T11:50:59Z"
     },
     {
       "id": 1139863285,
       "title": "Project-Music-Data-Enhanced",
       "description": "CodeYourFuture exercise: compute per-user listening stats (top songs/artists, streaks, genres) from mock listening-event data.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Project-Music-Data-Enhanced",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:17Z"
+      "updated": "2026-09-12T11:50:20Z"
     },
     {
       "id": 909404593,
       "title": "Project-TV-Show",
       "description": "CodeYourFuture project: fetch TVmaze episode data and display it to users, built up incrementally across milestones.",
-      "techStack": [],
+      "techStack": [
+        "codeyourfuture"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Project-TV-Show",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:18Z"
+      "updated": "2026-09-12T11:50:33Z"
     },
     {
       "id": 1040266847,
       "title": "Quote-App",
       "description": "Small full-stack quote generator: Express API serving random quotes plus a form to add new ones, with a vanilla JS/HTML frontend.",
-      "techStack": [],
+      "techStack": [
+        "codeyourfuture"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Quote-App",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-07-30T06:43:20Z"
+      "updated": "2026-09-12T11:51:29Z"
     },
     {
       "id": 921972891,
@@ -390,37 +465,43 @@
       "id": 1316838644,
       "title": "rent-it",
       "description": "RentIT Masvingo, a web-first SaaS rental marketplace, with a Firebase + Supabase + Vercel backend split.",
-      "techStack": [],
+      "techStack": [
+        "inprogress"
+      ],
       "link": "https://rent-it-alpha.vercel.app",
       "githubLink": "https://github.com/Luke-Manyamazi/rent-it",
       "deployedUrl": "https://rent-it-alpha.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-07-31T11:41:24Z"
+      "updated": "2026-09-12T11:50:30Z"
     },
     {
       "id": 1221647481,
       "title": "SitesTrack",
       "description": "Self-hosted Flask + SQLite web analytics tracker with a live dashboard.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/SitesTrack",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-07-30T06:43:26Z"
+      "updated": "2026-09-12T11:50:31Z"
     },
     {
       "id": 1141085445,
       "title": "Software-Engineering-Assignments",
       "description": "All my BSc Honors in Software Engineering Degree Programming Assignments ",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Software-Engineering-Assignments",
       "deployedUrl": null,
       "status": "in-progress",
       "language": null,
-      "updated": "2026-01-24T08:08:45Z"
+      "updated": "2026-09-12T11:51:04Z"
     },
     {
       "id": 1061013570,
@@ -438,13 +519,15 @@
       "id": 937286262,
       "title": "tribute",
       "description": "A Nelson Mandela tribute page, an HTML/CSS practice project.",
-      "techStack": [],
+      "techStack": [
+        "learning"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/tribute",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-07-30T06:43:35Z"
+      "updated": "2026-09-12T11:51:05Z"
     },
     {
       "id": 1078653188,
@@ -474,13 +557,15 @@
       "id": 1243629173,
       "title": "zimconsulatecpt-website",
       "description": "Zimbabwe Consulate Cape Town — modern website redesign built with React, Tailwind CSS & Framer Motion",
-      "techStack": [],
+      "techStack": [
+        "shipped"
+      ],
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/zimconsulatecpt-website",
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-05-20T06:21:22Z"
+      "updated": "2026-09-12T11:51:01Z"
     }
   ]
 }
