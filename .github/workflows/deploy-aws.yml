@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+  workflow_run:
+    workflows: ["Sync GitHub Projects"]
+    types:
+      - completed
+
 permissions:
   id-token: write
   contents: read
@@ -12,11 +17,16 @@ permissions:
 jobs:
   deploy:
     name: Build and Deploy to AWS
+    if: >-
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
