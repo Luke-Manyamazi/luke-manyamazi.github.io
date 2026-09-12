@@ -13,6 +13,11 @@ const USERNAME = "Luke-Manyamazi";
 const PORTFOLIO_REPO = "luke-manyamazi.github.io";
 const PORTFOLIO_URL = "https://lukemanyamazi.tech";
 
+const DESCRIPTION_OVERRIDES = {
+  CYFoverflow:
+    "Full-stack developer Q&A platform built with React and Vite, a Node.js/Express REST API, PostgreSQL, JWT authentication, voting, rich-text answers, and automated testing.",
+};
+
 function isLearning(repo) {
   const name = repo.name.toLowerCase();
 
@@ -87,9 +92,10 @@ async function main() {
       return {
         id: repo.id,
         title: repo.name,
-        description: repo.description,
+        description: DESCRIPTION_OVERRIDES[repo.name] || repo.description,
         techStack: (repo.topics || []).filter(
-          (topic) => !/^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
+          (topic) =>
+            !/^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
         ),
         link: repo.homepage || deploymentUrl || "",
         githubLink: repo.html_url,
