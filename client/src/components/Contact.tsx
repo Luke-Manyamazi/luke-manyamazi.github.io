@@ -1,88 +1,58 @@
 import { motion } from "framer-motion";
-import { SectionHeader } from "./SectionHeader";
-import { Mail, Phone, MapPin, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, ArrowUpRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const CONTACT_ITEMS = [
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+263 718 604 286",
-    href: "tel:+263718604286",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Zimbabwe",
-    href: "https://maps.google.com/?q=Zimbabwe",
-  },
-];
+import { SectionHeader } from "./SectionHeader";
 
 const SOCIALS = [
-  { icon: Github,   label: "GitHub",   href: "https://github.com/Luke-Manyamazi" },
-  { icon: Linkedin, label: "LinkedIn",  href: "https://www.linkedin.com/in/luke-manyamazi-5632b9331/" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Luke-Manyamazi" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/luke-manyamazi-5632b9331/" },
 ];
 
 export function Contact() {
   return (
     <section id="contact" className="section-padding container mx-auto px-4 md:px-6 section-band">
-      <div className="max-w-2xl mx-auto text-center">
-        <SectionHeader title="Get In Touch" subtitle="What's Next?" />
+      <div className="max-w-3xl mx-auto text-center">
+        <SectionHeader title="Let's Build Something Useful" subtitle="Get In Touch" />
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-muted-foreground text-lg leading-relaxed mb-10"
+          className="text-muted-foreground text-lg leading-relaxed mb-8"
         >
-          Whether you have a project in mind, want to collaborate, or just want to
-          say hi — my inbox is always open.
+          I’m open to software engineering opportunities, remote work, product collaborations,
+          and interesting problems where practical software can create measurable value.
         </motion.p>
 
-        {/* Primary email CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8"
         >
           <a href="mailto:lukemanyamazi1@gmail.com">
-            <Button
-              size="lg"
-              className="h-14 px-10 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold text-base gap-2"
-            >
+            <Button size="lg" className="h-13 px-8 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold gap-2">
               <Mail size={18} />
-              lukemanyamazi1@gmail.com
+              Email Me
               <ArrowUpRight size={16} className="opacity-70" />
+            </Button>
+          </a>
+          <a href="https://lukemanyamazi.tech" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="h-13 px-8 rounded-xl border-white/10 hover:border-primary/30 hover:text-primary gap-2">
+              View Portfolio
+              <ExternalLink size={15} />
             </Button>
           </a>
         </motion.div>
 
-        {/* Other contact items */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
-        >
-          {CONTACT_ITEMS.map(({ icon: Icon, label, value, href }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-5 py-3 glass-card rounded-xl text-muted-foreground hover:text-primary hover:border-primary/20 transition-all"
-            >
-              <Icon size={16} className="text-primary/60" />
-              <span className="text-sm">{value}</span>
-            </a>
-          ))}
-        </motion.div>
+        <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground/70 mb-8">
+          <span className="flex items-center gap-2"><MapPin size={15} className="text-primary/60" />Zimbabwe · Remote</span>
+          <span className="hidden sm:block h-4 w-px bg-white/10" />
+          <span>Open to engineering opportunities</span>
+        </div>
 
-        {/* Social links */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -91,14 +61,8 @@ export function Contact() {
           className="flex items-center justify-center gap-4"
         >
           {SOCIALS.map(({ icon: Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/25 transition-all"
-              title={label}
-            >
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" title={label}
+              className="w-11 h-11 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/25 transition-all">
               <Icon size={18} />
             </a>
           ))}
