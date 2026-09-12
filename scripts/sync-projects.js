@@ -10,10 +10,9 @@ const octokit = new Octokit({
 });
 
 const USERNAME = "Luke-Manyamazi";
+const PORTFOLIO_REPO = "luke-manyamazi.github.io";
+const PORTFOLIO_URL = "https://lukemanyamazi.tech";
 
-/**
- * Detect learning repos
- */
 function isLearning(repo) {
   const name = repo.name.toLowerCase();
 
@@ -21,16 +20,17 @@ function isLearning(repo) {
     name.includes("cs50") ||
     name.includes("codeyourfuture") ||
     name.includes("freecodecamp") ||
-    name.includes("fcc")
+    name.includes("fcc") ||
+    name.includes("piscine")
   );
 }
 
-/**
- * Detect deployed apps (shipped)
- */
 function getDeploymentUrl(repo) {
-  const homepage = repo.homepage?.toLowerCase() || "";
+  if (repo.name === PORTFOLIO_REPO) {
+    return PORTFOLIO_URL;
+  }
 
+  const homepage = repo.homepage?.toLowerCase() || "";
   const deploySignals = [
     "vercel.app",
     "netlify.app",
@@ -41,7 +41,7 @@ function getDeploymentUrl(repo) {
     "coolify",
   ];
 
-  if (deploySignals.some((d) => homepage.includes(d))) {
+  if (deploySignals.some((signal) => homepage.includes(signal))) {
     return repo.homepage;
   }
 
@@ -52,10 +52,19 @@ function getDeploymentUrl(repo) {
   return null;
 }
 
-/**
- * Final classification
- */
+function getStatusFromTopics(repo) {
+  const topics = repo.topics || [];
+  const statusTopic = topics.find((topic) =>
+    /^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
+  );
+
+  return statusTopic ? statusTopic.replace("status-", "") : null;
+}
+
 function classify(repo, deploymentUrl) {
+  const explicitStatus = getStatusFromTopics(repo);
+  if (explicitStatus) return explicitStatus;
+
   if (isLearning(repo)) return "learning";
   if (deploymentUrl) return "shipped";
   return "in-progress";
@@ -69,30 +78,27 @@ async function main() {
     per_page: 100,
   });
 
-  const projects = [];
+  const projects = repos
+    .filter((repo) => !repo.fork)
+    .map((repo) => {
+      const deploymentUrl = getDeploymentUrl(repo);
+      const status = classify(repo, deploymentUrl);
 
-  for (const repo of repos.filter((r) => !r.fork)) {
-    const deploymentUrl = getDeploymentUrl(repo);
-    const status = classify(repo, deploymentUrl);
-
-    projects.push({
-      id: repo.id,
-      title: repo.name,
-      description: repo.description,
-
-      techStack: repo.topics || [],
-
-      link: repo.homepage || "",
-      githubLink: repo.html_url,
-
-      deployedUrl: deploymentUrl,
-
-      status,
-
-      language: repo.language,
-      updated: repo.updated_at,
+      return {
+        id: repo.id,
+        title: repo.name,
+        description: repo.description,
+        techStack: (repo.topics || []).filter(
+          (topic) => !/^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
+        ),
+        link: repo.homepage || deploymentUrl || "",
+        githubLink: repo.html_url,
+        deployedUrl: deploymentUrl,
+        status,
+        language: repo.language,
+        updated: repo.updated_at,
+      };
     });
-  }
 
   const output = {
     generatedAt: new Date().toISOString(),
