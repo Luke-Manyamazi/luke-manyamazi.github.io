@@ -5,9 +5,10 @@ import path from "path";
 
 dotenv.config();
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+const token = process.env.GITHUB_TOKEN;
+if (!token) throw new Error("GITHUB_TOKEN is required");
+
+const octokit = new Octokit({ auth: token });
 
 const USERNAME = "Luke-Manyamazi";
 const PORTFOLIO_REPO = "luke-manyamazi.github.io";
@@ -20,7 +21,6 @@ const DESCRIPTION_OVERRIDES = {
 
 function isLearning(repo) {
   const name = repo.name.toLowerCase();
-
   return (
     name.includes("cs50") ||
     name.includes("codeyourfuture") ||
@@ -31,9 +31,7 @@ function isLearning(repo) {
 }
 
 function getDeploymentUrl(repo) {
-  if (repo.name === PORTFOLIO_REPO) {
-    return PORTFOLIO_URL;
-  }
+  if (repo.name === PORTFOLIO_REPO) return PORTFOLIO_URL;
 
   const homepage = repo.homepage?.toLowerCase() || "";
   const deploySignals = [
@@ -50,10 +48,7 @@ function getDeploymentUrl(repo) {
     return repo.homepage;
   }
 
-  if (repo.has_pages) {
-    return repo.html_url;
-  }
-
+  if (repo.has_pages) return repo.html_url;
   return null;
 }
 
@@ -62,14 +57,12 @@ function getStatusFromTopics(repo) {
   const statusTopic = topics.find((topic) =>
     /^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
   );
-
   return statusTopic ? statusTopic.replace("status-", "") : null;
 }
 
 function classify(repo, deploymentUrl) {
   const explicitStatus = getStatusFromTopics(repo);
   if (explicitStatus) return explicitStatus;
-
   if (isLearning(repo)) return "learning";
   if (deploymentUrl) return "shipped";
   return "in-progress";
@@ -94,8 +87,7 @@ async function main() {
         title: repo.name,
         description: DESCRIPTION_OVERRIDES[repo.name] || repo.description,
         techStack: (repo.topics || []).filter(
-          (topic) =>
-            !/^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
+          (topic) => !/^status-(deployed|shipped|in-progress|learning|archived)$/.test(topic),
         ),
         link: repo.homepage || deploymentUrl || "",
         githubLink: repo.html_url,
@@ -111,12 +103,14 @@ async function main() {
     projects,
   };
 
-  const filePath = path.resolve("data/projects.json");
-
+  const filePath = path.resolve("client/public/data/projects.json");
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, JSON.stringify(output, null, 2));
 
-  console.log(`Generated ${projects.length} projects`);
+  console.log(`Generated ${projects.length} projects at ${filePath}`);
 }
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
