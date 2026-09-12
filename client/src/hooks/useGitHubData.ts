@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-const CACHE_KEY = 'gh_data_v1';
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+const API_URL = import.meta.env.VITE_API_URL || "";
+const STATIC_DATA_URL = "/data/github.json";
+const CACHE_KEY = "gh_data_v2";
+const CACHE_TTL = 60 * 60 * 1000;
 
 export interface ContributionData {
   name: string;
@@ -44,6 +45,12 @@ export interface LanguageStat {
   pct: number;
 }
 
+interface GitHubSnapshot {
+  generatedAt: string;
+  contributions: ContributionData;
+  repos: RawRepo[];
+}
+
 export interface GitHubData {
   contributions: ContributionData | null;
   repos: RawRepo[];
@@ -52,14 +59,13 @@ export interface GitHubData {
   loading: boolean;
 }
 
-// Module-level cache so multiple components share one fetch
-let _promise: Promise<{ contributions: ContributionData; repos: RawRepo[] }> | null = null;
+let _promise: Promise<GitHubSnapshot> | null = null;
 
 function aggregateLanguages(repos: RawRepo[]): LanguageStat[] {
   const counts: Record<string, { color: string; count: number }> = {};
   repos.forEach((r) => {
     (r.languages?.nodes || []).forEach((l) => {
-      if (!counts[l.name]) counts[l.name] = { color: l.color || '#8b8b8b', count: 0 };
+      if (!counts[l.name]) counts[l.name] = { color: l.color || "#8b8b8b", count: 0 };
       counts[l.name].count++;
     });
   });
@@ -70,43 +76,62 @@ function aggregateLanguages(repos: RawRepo[]): LanguageStat[] {
     .slice(0, 14);
 }
 
-function loadCache(): { contributions: ContributionData; repos: RawRepo[] } | null {
+function loadCache(): GitHubSnapshot | null {
   try {
     const raw = sessionStorage.getItem(CACHE_KEY);
     if (!raw) return null;
-    const { data, ts } = JSON.parse(raw) as { data: { contributions: ContributionData; repos: RawRepo[] }; ts: number };
+    const { data, ts } = JSON.parse(raw) as { data: GitHubSnapshot; ts: number };
     if (Date.now() - ts > CACHE_TTL) return null;
     return data;
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
-function saveCache(data: { contributions: ContributionData; repos: RawRepo[] }) {
-  try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() })); } catch { /* noop */ }
+function saveCache(data: GitHubSnapshot) {
+  try {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+  } catch {
+    // Ignore storage failures.
+  }
+}
+
+async function loadStaticSnapshot(): Promise<GitHubSnapshot> {
+  const response = await fetch(`${STATIC_DATA_URL}?v=${Date.now()}`);
+  if (!response.ok) throw new Error("Static GitHub snapshot unavailable");
+  return response.json() as Promise<GitHubSnapshot>;
+}
+
+async function loadApiSnapshot(): Promise<GitHubSnapshot> {
+  if (!API_URL) throw new Error("No GitHub API URL configured");
+
+  const [contributions, reposResponse] = await Promise.all([
+    fetch(`${API_URL}/api/contributions`).then((r) => r.json()) as Promise<ContributionData>,
+    fetch(`${API_URL}/api/repos`).then((r) => r.json()) as Promise<{ repos: RawRepo[] }>,
+  ]);
+
+  return { generatedAt: new Date().toISOString(), contributions, repos: reposResponse.repos };
 }
 
 export function useGitHubData(): GitHubData {
   const cached = loadCache();
-  const [data, setData] = useState<{ contributions: ContributionData; repos: RawRepo[] } | null>(cached);
+  const [data, setData] = useState<GitHubSnapshot | null>(cached);
   const [loading, setLoading] = useState(!cached);
 
   useEffect(() => {
     if (data) return;
 
     if (!_promise) {
-      _promise = Promise.all([
-        fetch(`${API_URL}/api/contributions`).then((r) => r.json()) as Promise<ContributionData>,
-        fetch(`${API_URL}/api/repos`).then((r) => r.json()).then((d: { repos: RawRepo[] }) => d.repos),
-      ]).then(([contributions, repos]) => {
-        const result = { contributions, repos };
-        saveCache(result);
-        return result;
-      });
+      _promise = loadStaticSnapshot().catch(() => loadApiSnapshot());
     }
 
-    _promise.then((result) => {
-      setData(result);
-      setLoading(false);
-    }).catch(() => setLoading(false));
+    _promise
+      .then((result) => {
+        saveCache(result);
+        setData(result);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [data]);
 
   const repos = data?.repos ?? [];
