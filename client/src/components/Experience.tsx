@@ -14,11 +14,10 @@ export function Experience() {
 
   return (
     <section id="experience" className="section-padding container mx-auto px-4 md:px-6">
-      <SectionHeader title="Career Journey" subtitle="Experience" />
+      <SectionHeader title="Professional Experience" subtitle="Software, systems & application support in production environments" />
 
       <div className="max-w-3xl mx-auto">
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent hidden sm:block" />
 
           <div className="space-y-4">
@@ -35,7 +34,6 @@ export function Experience() {
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
                   className="flex gap-5"
                 >
-                  {/* Timeline dot */}
                   <div className="hidden sm:flex flex-col items-center flex-shrink-0 mt-5">
                     <div
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center z-10 transition-colors duration-300 ${
@@ -46,16 +44,15 @@ export function Experience() {
                     </div>
                   </div>
 
-                  {/* Card */}
                   <div
                     className={`flex-1 glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
                       isOpen ? "border-primary/20" : "hover:border-white/10"
                     }`}
                   >
-                    {/* Header — always visible */}
                     <button
                       onClick={() => setExpanded(isOpen ? null : idx)}
                       className="w-full text-left p-5 md:p-6"
+                      aria-expanded={isOpen}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0">
@@ -63,9 +60,9 @@ export function Experience() {
                             <span className="font-mono text-xs text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
                               {job.duration}
                             </span>
-                            {(job as { type?: string }).type && (
-                              <span className={`font-mono text-[11px] px-2 py-0.5 rounded-full border ${TYPE_COLORS["full-time"]}`}>
-                                Full-time
+                            {idx === 0 && (
+                              <span className="font-mono text-[11px] px-2 py-0.5 rounded-full border bg-primary/10 text-primary border-primary/20">
+                                Current role
                               </span>
                             )}
                           </div>
@@ -88,7 +85,6 @@ export function Experience() {
                       </div>
                     </button>
 
-                    {/* Expanded bullets */}
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
