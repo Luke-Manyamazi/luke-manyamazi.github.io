@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:51:43.395Z",
+  "generatedAt": "2026-09-12T18:56:38.735Z",
   "projects": [
     {
       "id": 1356101878,
@@ -86,7 +86,7 @@
     {
       "id": 1097121850,
       "title": "CYFoverflow",
-      "description": "Q&A Website",
+      "description": "Full-stack developer Q&A platform built with React and Vite, a Node.js/Express REST API, PostgreSQL, JWT authentication, voting, rich-text answers, and automated testing.",
       "techStack": [
         "shipped"
       ],
@@ -233,7 +233,7 @@
       "deployedUrl": "https://lukemanyamazi.tech",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T18:51:28Z"
+      "updated": "2026-09-12T18:56:24Z"
     },
     {
       "id": 1302994967,
