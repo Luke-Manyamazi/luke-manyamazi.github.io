@@ -126,33 +126,23 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     id: 1,
-    role: "Software & Application Support Specialist",
+    role: "Software & Application Support Specialist / IT Support Technician",
     company: "Torga Optical Lens Manufacturing",
     location: "Cape Town, South Africa",
-    duration: "2023 – Present",
+    duration: "December 2020 – July 2026",
     type: "full-time",
     description:
-      "Collaborate with external software developers to support and enhance proprietary business applications used across 170+ branches, reducing critical issue resolution times by 25%.\nManage deployment testing and software release cycles across 170+ branches, ensuring zero-downtime transitions and business continuity.\nDocument, reproduce, and track software defects — partnering with developers to accelerate resolutions.\nIntegrate digital content solutions with marketing teams, increasing customer engagement by 30%.\nCoordinate User Acceptance Testing (UAT) for new software releases and system enhancements.\nMonitor application performance and drive process improvements across the branch network.\nCollaborate with business stakeholders to gather requirements and improve system functionality.",
+      "Held concurrent responsibilities across software/application support and IT support, providing technical support to business users, branches and manufacturing operations.\nSupported 18+ business-critical IT systems and applications across a distributed environment of 170+ branches, helping maintain reliable day-to-day operations.\nActed as a technical liaison between business users and external developers, investigating application defects, reproducing issues and providing technical information required for resolution.\nManaged application testing, UAT and release validation, identifying defects and verifying fixes before production deployment.\nInvestigated recurring application and system issues, documenting symptoms, reproduction steps and potential root causes to improve resolution times.\nSupported software deployments and release cycles, helping minimise disruption to branch and manufacturing operations.\nDiagnosed and resolved hardware, software, connectivity, application and user-access incidents across remote and on-site environments.\nAssisted with installation, configuration, maintenance and troubleshooting of business applications, endpoints and IT infrastructure.\nWorked with internal stakeholders, vendors and external development teams to clarify requirements, investigate production incidents and validate system changes.\nDelivered structured technical training and user guidance, contributing to a 30% reduction in support tickets by improving user capability and troubleshooting awareness.\nPartnered with marketing and technical teams to implement digital content tools, contributing to a 30% increase in customer engagement.\nDocumented recurring issues, technical solutions and support procedures to improve knowledge sharing and troubleshooting consistency.\nSupported application configuration, user access and system administration across multiple business platforms.\nResigned on 31 July 2026 following relocation to Zimbabwe.",
   },
   {
     id: 2,
-    role: "IT Support Technician",
-    company: "Torga Optical Lens Manufacturing",
-    location: "Cape Town, South Africa",
-    duration: "2020 – 2023",
-    type: "full-time",
-    description:
-      "Maintained and troubleshot 18+ critical IT systems, sustaining 99.9% system uptime across all locations.\nDeveloped and delivered technical training programmes that reduced support tickets by 30%.\nConfigured and maintained workstations, printers, network devices, and Microsoft 365 environments.\nProvided first- and second-line technical support to staff across multiple locations.\nSupported software deployments, upgrades, and maintenance activities organisation-wide.\nDocumented technical procedures and troubleshooting guides to improve team support efficiency.\nAssisted with user account administration, security controls, and access management.",
-  },
-  {
-    id: 3,
     role: "Provincial Vehicle Licensing Supervisor",
     company: "Zimbabwe National Roads Administration (ZINARA)",
     location: "Zimbabwe",
     duration: "2013 – 2019",
     type: "full-time",
     description:
-      "Supervised daily vehicle licensing operations and ensured compliance with national regulations across the province.\nMonitored and maintained the ZIMLIC vehicle licensing system — ensuring reliable transaction processing and system availability.\nAdministered user accounts, permissions, and access controls within licensing and banking systems.\nIdentified, documented, and reported software defects, contributing to measurable improvements in system performance.\nProvided first-line technical support to licensing officers and administrative staff.\nGenerated operational, financial, and compliance reports for provincial management and regulatory stakeholders.\nTrained and supported staff on licensing systems, operational procedures, and technology platforms.",
+      "Supervised daily vehicle licensing operations and ensured compliance with national regulations across the province.\nMonitored and maintained the ZIMLIC vehicle licensing system, supporting reliable transaction processing and system availability.\nAdministered user accounts, permissions and access controls within licensing and banking systems.\nIdentified, documented and reported software defects, contributing to improvements in system performance.\nProvided first-line technical support to licensing officers and administrative staff.\nGenerated operational, financial and compliance reports for provincial management and regulatory stakeholders.\nTrained and supported staff on licensing systems, operational procedures and technology platforms.",
   },
 ];
 
