@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:19:26.273Z",
+  "generatedAt": "2026-09-12T18:20:00.527Z",
   "projects": [
     {
       "id": 1356101878,
@@ -22,7 +22,7 @@
       "techStack": [
         "shipped"
       ],
-      "link": "",
+      "link": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "githubLink": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "deployedUrl": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "status": "shipped",
@@ -228,12 +228,12 @@
       "techStack": [
         "profile"
       ],
-      "link": "",
+      "link": "https://lukemanyamazi.tech",
       "githubLink": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
-      "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
+      "deployedUrl": "https://lukemanyamazi.tech",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T18:19:10Z"
+      "updated": "2026-09-12T18:19:45Z"
     },
     {
       "id": 1302994967,
@@ -335,7 +335,7 @@
       "link": "",
       "githubLink": "https://github.com/Luke-Manyamazi/Piscine-Prep",
       "deployedUrl": null,
-      "status": "in-progress",
+      "status": "learning",
       "language": "JavaScript",
       "updated": "2026-09-12T11:50:46Z"
     },
