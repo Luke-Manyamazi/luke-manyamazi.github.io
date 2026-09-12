@@ -16,6 +16,59 @@ const FEATURED_PROJECTS = [
   "CYFoverflow",
 ];
 
+const FEATURED_ALIASES: Record<string, string> = {
+  "bh-farm-os": "BH-Farm-OS",
+  "bhfarmos": "BH-Farm-OS",
+  "chenesa": "Chenesa",
+  "ipalo-shop": "ipalo-shop",
+  "rent-it": "rent-it",
+  "rentit": "rent-it",
+  "isolveai": "iSolveAI",
+  "cyfoverflow": "CYFoverflow",
+};
+
+const FEATURED_FALLBACKS: Record<string, { description: string; techStack: string[]; language?: string; link?: string }> = {
+  "BH-Farm-OS": {
+    description:
+      "Full-stack farm management platform for livestock, inventory, tasks, finances, alerts, and day-to-day agricultural operations.",
+    techStack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    language: "TypeScript",
+  },
+  Chenesa: {
+    description:
+      "AI email-cleaning SaaS that helps users organise and tidy inboxes across major email providers using a Next.js and FastAPI architecture.",
+    techStack: ["TypeScript", "Next.js", "FastAPI", "Supabase"],
+    language: "TypeScript",
+    link: "https://chenesa.vercel.app",
+  },
+  "ipalo-shop": {
+    description:
+      "Premium lifestyle commerce storefront built for South Africa, with product browsing, cart flows, Supabase data, Prisma and PayFast payments.",
+    techStack: ["TypeScript", "Next.js", "Supabase", "Prisma", "PayFast"],
+    language: "TypeScript",
+    link: "https://ipalo-shop.vercel.app",
+  },
+  "rent-it": {
+    description:
+      "Web-first SaaS rental marketplace connecting customers and rental providers through a product-focused marketplace experience.",
+    techStack: ["TypeScript", "Firebase", "Supabase", "Vercel"],
+    language: "TypeScript",
+  },
+  iSolveAI: {
+    description:
+      "AI-assisted troubleshooting tool for IT technicians that explains error messages using Google Gemini with backend fallback support.",
+    techStack: ["JavaScript", "Chrome Extension", "Google Gemini", "REST API"],
+    language: "JavaScript",
+  },
+  CYFoverflow: {
+    description:
+      "Full-stack developer Q&A platform where users ask questions, share answers, vote, and collaborate through a React/Vite frontend, Node/Express API and PostgreSQL database.",
+    techStack: ["JavaScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
+    language: "JavaScript",
+    link: "https://cyfoverflow.hosting.codeyourfuture.io",
+  },
+};
+
 const STATUS_LABELS: Record<string, string> = {
   shipped: "Shipped",
   inProgress: "In Progress",
@@ -27,6 +80,10 @@ function normaliseStatus(status: string | undefined) {
   return status || "inProgress";
 }
 
+function canonicalFeaturedTitle(title: string) {
+  return FEATURED_ALIASES[title.toLowerCase().replace(/[^a-z0-9-]/g, "")] || title;
+}
+
 export function Projects() {
   const { data: projects, isLoading } = useProjects();
 
@@ -35,17 +92,74 @@ export function Projects() {
   const [sort, setSort] = useState("featured");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const filteredProjects = useMemo(() => {
-    let data = [...projects].map((project: any) => ({
-      ...project,
-      status: normaliseStatus(project.status),
-    }));
+  const featuredProjects = useMemo(() => {
+    const source = [...projects].map((project: any) => {
+      const canonicalTitle = canonicalFeaturedTitle(project.title || "");
+      const fallback = FEATURED_FALLBACKS[canonicalTitle];
 
-    if (filter === "featured") {
-      data = data.filter((project: any) => FEATURED_PROJECTS.includes(project.title));
-    } else if (filter !== "all") {
-      data = data.filter((project: any) => project.status === filter);
-    }
+      return {
+        ...project,
+        title: canonicalTitle,
+        description:
+          fallback && (!project.description || project.description === "Q&A Website")
+            ? fallback.description
+            : project.description || fallback?.description || "Project details coming soon.",
+        techStack:
+          project.techStack?.length > 0
+            ? project.techStack
+            : fallback?.techStack || [],
+        language: project.language || fallback?.language,
+        link: project.link || fallback?.link || "",
+        status: normaliseStatus(project.status),
+      };
+    });
+
+    const byTitle = new Map(source.map((project: any) => [project.title, project]));
+
+    FEATURED_PROJECTS.forEach((title) => {
+      if (!byTitle.has(title) && FEATURED_FALLBACKS[title]) {
+        const fallback = FEATURED_FALLBACKS[title];
+        byTitle.set(title, {
+          id: `featured-${title}`,
+          title,
+          description: fallback.description,
+          techStack: fallback.techStack,
+          language: fallback.language,
+          link: fallback.link || "",
+          githubLink: `https://github.com/Luke-Manyamazi/${title}`,
+          status: "inProgress",
+          updated: new Date(0).toISOString(),
+        });
+      }
+    });
+
+    return FEATURED_PROJECTS.map((title) => byTitle.get(title)).filter(Boolean);
+  }, [projects]);
+
+  const allProjects = useMemo(() => {
+    const featuredByTitle = new Map(featuredProjects.map((project: any) => [project.title, project]));
+    return [...projects].map((project: any) => {
+      const canonicalTitle = canonicalFeaturedTitle(project.title || "");
+      const featured = featuredByTitle.get(canonicalTitle);
+      return {
+        ...project,
+        title: canonicalTitle,
+        description:
+          featured?.description || project.description || "Project details coming soon.",
+        techStack: featured?.techStack?.length ? featured.techStack : project.techStack || [],
+        language: project.language || featured?.language,
+        link: project.link || featured?.link || "",
+        status: normaliseStatus(project.status),
+      };
+    });
+  }, [projects, featuredProjects]);
+
+  const filteredProjects = useMemo(() => {
+    let data = filter === "featured"
+      ? [...featuredProjects]
+      : filter === "all"
+        ? [...allProjects]
+        : allProjects.filter((project: any) => project.status === filter);
 
     if (search.trim()) {
       const query = search.toLowerCase();
@@ -60,37 +174,26 @@ export function Projects() {
 
     data.sort((a: any, b: any) => {
       if (sort === "featured") {
-        const aIndex = FEATURED_PROJECTS.indexOf(a.title);
-        const bIndex = FEATURED_PROJECTS.indexOf(b.title);
-        return (aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex) -
-          (bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex);
+        return FEATURED_PROJECTS.indexOf(a.title) - FEATURED_PROJECTS.indexOf(b.title);
       }
-
-      if (sort === "newest") {
-        return new Date(b.updated).getTime() - new Date(a.updated).getTime();
-      }
-
-      if (sort === "oldest") {
-        return new Date(a.updated).getTime() - new Date(b.updated).getTime();
-      }
-
+      if (sort === "newest") return new Date(b.updated).getTime() - new Date(a.updated).getTime();
+      if (sort === "oldest") return new Date(a.updated).getTime() - new Date(b.updated).getTime();
       return a.title.localeCompare(b.title);
     });
 
     return data;
-  }, [projects, filter, search, sort]);
+  }, [allProjects, featuredProjects, filter, search, sort]);
 
   const visibleProjects = filteredProjects.slice(0, visibleCount);
   const canShowMore = visibleCount < filteredProjects.length;
 
   const statusCounts = useMemo(
     () =>
-      projects.reduce<Record<string, number>>((acc: Record<string, number>, project: any) => {
-        const status = normaliseStatus(project.status);
-        acc[status] = (acc[status] || 0) + 1;
+      allProjects.reduce<Record<string, number>>((acc, project: any) => {
+        acc[project.status] = (acc[project.status] || 0) + 1;
         return acc;
       }, {}),
-    [projects],
+    [allProjects],
   );
 
   const renderProject = (project: any, idx: number) => {
@@ -108,9 +211,7 @@ export function Projects() {
         <div className="flex justify-between items-start mb-4 gap-3">
           <div className="flex items-center gap-2">
             {isFeatured ? <Sparkles size={18} className="text-primary" /> : <Folder size={20} className="text-primary" />}
-            {isFeatured && (
-              <span className="text-[10px] font-mono uppercase tracking-wider text-primary/80">Featured</span>
-            )}
+            {isFeatured && <span className="text-[10px] font-mono uppercase tracking-wider text-primary/80">Featured</span>}
           </div>
 
           <div className="flex gap-3 items-center">
@@ -134,7 +235,7 @@ export function Projects() {
         <div className="flex flex-wrap gap-2 items-center">
           {project.language && <span className="text-[11px] font-medium text-white/80">{project.language}</span>}
           {project.language && project.techStack?.length > 0 && <span className="text-white/20">•</span>}
-          {project.techStack?.filter((tech: string) => !["shipped", "inprogress", "in-progress", "learning"].includes(tech)).slice(0, 4).map((tech: string) => (
+          {project.techStack?.filter((tech: string) => !["shipped", "inprogress", "in-progress", "learning"].includes(tech)).slice(0, 5).map((tech: string) => (
             <span key={tech} className="text-[11px] text-primary/80">{tech}</span>
           ))}
         </div>
@@ -179,7 +280,7 @@ export function Projects() {
           <div className="flex flex-wrap gap-2">
             {[
               { key: "featured", label: `Featured (${FEATURED_PROJECTS.length})` },
-              { key: "all", label: `All (${projects.length})` },
+              { key: "all", label: `All (${allProjects.length})` },
               { key: "shipped", label: `Shipped (${statusCounts.shipped || 0})` },
               { key: "inProgress", label: `In Progress (${statusCounts.inProgress || 0})` },
               { key: "learning", label: `Learning (${statusCounts.learning || 0})` },
