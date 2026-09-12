@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T15:11:18.579Z",
+  "generatedAt": "2026-09-12T17:46:49.876Z",
   "projects": [
     {
       "id": 1356101878,
@@ -13,7 +13,7 @@
       "deployedUrl": "https://bh-farm-os.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T14:02:32Z"
+      "updated": "2026-09-12T16:08:47Z"
     },
     {
       "id": 1068674653,
@@ -27,7 +27,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/Boroma-Hills-Website-",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:51:08Z"
+      "updated": "2026-09-12T16:15:08Z"
     },
     {
       "id": 1367353510,
@@ -67,7 +67,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:50:43Z"
+      "updated": "2026-09-12T16:42:55Z"
     },
     {
       "id": 1247573899,
@@ -81,7 +81,7 @@
       "deployedUrl": "https://chenesa.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:51:06Z"
+      "updated": "2026-09-12T16:42:46Z"
     },
     {
       "id": 1097121850,
@@ -95,7 +95,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:51:38Z"
+      "updated": "2026-09-12T16:16:16Z"
     },
     {
       "id": 1140616321,
@@ -109,7 +109,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:51:42Z"
+      "updated": "2026-09-12T17:14:25Z"
     },
     {
       "id": 1107830160,
@@ -123,7 +123,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:50:29Z"
+      "updated": "2026-09-12T16:54:00Z"
     },
     {
       "id": 983137329,
@@ -189,7 +189,7 @@
       "deployedUrl": "https://ipalo-shop.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:50:52Z"
+      "updated": "2026-09-12T16:18:16Z"
     },
     {
       "id": 1059505210,
@@ -203,7 +203,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:51:00Z"
+      "updated": "2026-09-12T16:17:55Z"
     },
     {
       "id": 867261849,
@@ -219,7 +219,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/Luke-Manyamazi",
       "status": "shipped",
       "language": "HTML",
-      "updated": "2026-09-12T11:51:35Z"
+      "updated": "2026-09-12T17:46:47Z"
     },
     {
       "id": 1147442070,
@@ -233,19 +233,7 @@
       "deployedUrl": "https://github.com/Luke-Manyamazi/luke-manyamazi.github.io",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:51:16Z"
-    },
-    {
-      "id": 936192526,
-      "title": "luke-portfolio",
-      "description": "My updated portfolio",
-      "techStack": [],
-      "link": "https://portfolio-luke-manyamazis-projects.vercel.app",
-      "githubLink": "https://github.com/Luke-Manyamazi/luke-portfolio",
-      "deployedUrl": "https://portfolio-luke-manyamazis-projects.vercel.app",
-      "status": "shipped",
-      "language": "JavaScript",
-      "updated": "2025-10-29T03:51:29Z"
+      "updated": "2026-09-12T17:46:34Z"
     },
     {
       "id": 1302994967,
@@ -259,7 +247,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "HTML",
-      "updated": "2026-09-12T11:50:54Z"
+      "updated": "2026-09-12T17:14:31Z"
     },
     {
       "id": 1339785007,
@@ -363,7 +351,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:51:40Z"
+      "updated": "2026-09-12T16:38:25Z"
     },
     {
       "id": 1043700273,
@@ -377,7 +365,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:50:55Z"
+      "updated": "2026-09-12T16:15:14Z"
     },
     {
       "id": 1033006623,
@@ -391,7 +379,7 @@
       "deployedUrl": null,
       "status": "in-progress",
       "language": "JavaScript",
-      "updated": "2026-09-12T11:50:24Z"
+      "updated": "2026-09-12T17:06:05Z"
     },
     {
       "id": 1132958309,
@@ -473,7 +461,7 @@
       "deployedUrl": "https://rent-it-alpha.vercel.app",
       "status": "shipped",
       "language": "TypeScript",
-      "updated": "2026-09-12T11:50:30Z"
+      "updated": "2026-09-12T16:52:04Z"
     },
     {
       "id": 1221647481,
