@@ -60,11 +60,6 @@ export function Experience() {
                             <span className="font-mono text-xs text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
                               {job.duration}
                             </span>
-                            {idx === 0 && (
-                              <span className="font-mono text-[11px] px-2 py-0.5 rounded-full border bg-primary/10 text-primary border-primary/20">
-                                Current role
-                              </span>
-                            )}
                           </div>
                           <h3 className="text-base md:text-lg font-bold text-white leading-snug">
                             {job.role}
