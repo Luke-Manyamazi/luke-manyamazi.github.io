@@ -1,53 +1,59 @@
 export const SKILLS = [
-  // Languages
-  { id: 1,  name: "JavaScript (ES6+)", category: "Languages" },
-  { id: 2,  name: "TypeScript",         category: "Languages" },
+  // Core Languages
+  { id: 1,  name: "TypeScript",         category: "Languages" },
+  { id: 2,  name: "JavaScript (ES6+)",  category: "Languages" },
   { id: 3,  name: "Python",             category: "Languages" },
-  { id: 4,  name: "Java",               category: "Languages" },
-  { id: 5,  name: "C#",                 category: "Languages" },
-  { id: 6,  name: "PHP",                category: "Languages" },
-  { id: 7,  name: "SQL",                category: "Languages" },
+  { id: 4,  name: "SQL",                category: "Languages" },
+  { id: 5,  name: "Java",               category: "Languages" },
+  { id: 6,  name: "C#",                 category: "Languages" },
+  { id: 7,  name: "PHP",                category: "Languages" },
   { id: 8,  name: "HTML5",              category: "Languages" },
   { id: 9,  name: "CSS3",               category: "Languages" },
 
-  // Frameworks & Libraries
-  { id: 10, name: "React",              category: "Frameworks" },
-  { id: 11, name: "Next.js",            category: "Frameworks" },
-  { id: 12, name: "Node.js",            category: "Frameworks" },
-  { id: 13, name: "Express.js",         category: "Frameworks" },
-  { id: 14, name: "React Native",       category: "Frameworks" },
-  { id: 15, name: "Tailwind CSS",       category: "Frameworks" },
-  { id: 16, name: "Bootstrap",          category: "Frameworks" },
-  { id: 17, name: "Socket.io",          category: "Frameworks" },
-  { id: 18, name: "Flask",              category: "Frameworks" },
+  // Frontend & Mobile
+  { id: 10, name: "React",              category: "Frontend" },
+  { id: 11, name: "Next.js",            category: "Frontend" },
+  { id: 12, name: "React Native",       category: "Frontend" },
+  { id: 13, name: "Vite",               category: "Frontend" },
+  { id: 14, name: "Tailwind CSS",       category: "Frontend" },
+  { id: 15, name: "Framer Motion",      category: "Frontend" },
+  { id: 16, name: "Bootstrap",          category: "Frontend" },
 
-  // Databases & Cloud
-  { id: 19, name: "PostgreSQL",         category: "Databases & Cloud" },
-  { id: 20, name: "MySQL",              category: "Databases & Cloud" },
-  { id: 21, name: "Supabase",           category: "Databases & Cloud" },
-  { id: 22, name: "Firebase",           category: "Databases & Cloud" },
-  { id: 23, name: "AWS",                category: "Databases & Cloud" },
-  { id: 24, name: "Google Cloud",       category: "Databases & Cloud" },
+  // Backend & APIs
+  { id: 17, name: "Node.js",            category: "Backend & APIs" },
+  { id: 18, name: "Express.js",         category: "Backend & APIs" },
+  { id: 19, name: "REST APIs",          category: "Backend & APIs" },
+  { id: 20, name: "WebSockets",         category: "Backend & APIs" },
+  { id: 21, name: "Flask",              category: "Backend & APIs" },
+  { id: 22, name: "FastAPI",            category: "Backend & APIs" },
 
-  // Tools & Engineering
-  { id: 25, name: "Git & GitHub",       category: "Tools & Engineering" },
-  { id: 26, name: "Docker",             category: "Tools & Engineering" },
-  { id: 27, name: "Vite",               category: "Tools & Engineering" },
-  { id: 28, name: "REST APIs",          category: "Tools & Engineering" },
-  { id: 29, name: "Postman",            category: "Tools & Engineering" },
-  { id: 30, name: "CI/CD",              category: "Tools & Engineering" },
-  { id: 31, name: "Agile / Scrum",      category: "Tools & Engineering" },
-  { id: 32, name: "UAT",                category: "Tools & Engineering" },
-  { id: 33, name: "Software Deployment",category: "Tools & Engineering" },
-  { id: 34, name: "Systems Administration", category: "Tools & Engineering" },
+  // Data & Cloud
+  { id: 23, name: "PostgreSQL",         category: "Data & Cloud" },
+  { id: 24, name: "MySQL",              category: "Data & Cloud" },
+  { id: 25, name: "Supabase",           category: "Data & Cloud" },
+  { id: 26, name: "Firebase",           category: "Data & Cloud" },
+  { id: 27, name: "AWS",                category: "Data & Cloud" },
+  { id: 28, name: "Google Cloud",       category: "Data & Cloud" },
+  { id: 29, name: "Vercel",             category: "Data & Cloud" },
 
-  // AI & Development
-  { id: 35, name: "Claude (Anthropic)", category: "AI & Development" },
-  { id: 36, name: "Google Gemini",       category: "AI & Development" },
-  { id: 37, name: "GitHub Copilot",      category: "AI & Development" },
-  { id: 38, name: "AI API Integration",  category: "AI & Development" },
-  { id: 39, name: "Prompt Engineering",  category: "AI & Development" },
-  { id: 40, name: "AI-assisted Development", category: "AI & Development" },
+  // Engineering & Delivery
+  { id: 30, name: "Git & GitHub",        category: "Engineering & Delivery" },
+  { id: 31, name: "Docker",             category: "Engineering & Delivery" },
+  { id: 32, name: "GitHub Actions",     category: "Engineering & Delivery" },
+  { id: 33, name: "CI/CD",              category: "Engineering & Delivery" },
+  { id: 34, name: "Testing",            category: "Engineering & Delivery" },
+  { id: 35, name: "Postman",            category: "Engineering & Delivery" },
+  { id: 36, name: "Agile / Scrum",      category: "Engineering & Delivery" },
+  { id: 37, name: "UAT",                category: "Engineering & Delivery" },
+  { id: 38, name: "Authentication & Authorization", category: "Engineering & Delivery" },
+  { id: 39, name: "Database Design",    category: "Engineering & Delivery" },
+
+  // AI & Automation
+  { id: 40, name: "Google Gemini",       category: "AI & Automation" },
+  { id: 41, name: "Claude (Anthropic)", category: "AI & Automation" },
+  { id: 42, name: "AI API Integration", category: "AI & Automation" },
+  { id: 43, name: "Prompt Engineering", category: "AI & Automation" },
+  { id: 44, name: "AI-assisted Development", category: "AI & Automation" },
 ];
 
 export const PROJECTS = [
