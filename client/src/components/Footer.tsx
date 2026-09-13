@@ -34,7 +34,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             {[
               { icon: Github,   href: "https://github.com/Luke-Manyamazi",  label: "GitHub" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/luke-manyamazi-5632b9331/", label: "LinkedIn" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/lukemanyamazi/", label: "LinkedIn" },
               { icon: Mail,     href: "mailto:lukemanyamazi1@gmail.com",    label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
