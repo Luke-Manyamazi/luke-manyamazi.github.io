@@ -19,6 +19,16 @@ const DESCRIPTION_OVERRIDES = {
     "Full-stack developer Q&A platform built with React and Vite, a Node.js/Express REST API, PostgreSQL, JWT authentication, voting, rich-text answers, and automated testing.",
 };
 
+const LIVE_URL_OVERRIDES = {
+  "BH-Farm-OS": "https://bh-farm-os.vercel.app",
+  "rent-it": "https://rent-it-alpha.vercel.app",
+  iSolveAI: "https://github.com/Luke-Manyamazi/iSolveAI#2-load-the-extension",
+};
+
+const LIVE_LABEL_OVERRIDES = {
+  iSolveAI: "Install Extension",
+};
+
 function isLearning(repo) {
   const name = repo.name.toLowerCase();
   return (
@@ -32,6 +42,7 @@ function isLearning(repo) {
 
 function getDeploymentUrl(repo) {
   if (repo.name === PORTFOLIO_REPO) return PORTFOLIO_URL;
+  if (LIVE_URL_OVERRIDES[repo.name]) return LIVE_URL_OVERRIDES[repo.name];
 
   const homepage = repo.homepage?.toLowerCase() || "";
   const deploySignals = [
@@ -92,6 +103,7 @@ async function main() {
         link: repo.homepage || deploymentUrl || "",
         githubLink: repo.html_url,
         deployedUrl: deploymentUrl,
+        linkLabel: LIVE_LABEL_OVERRIDES[repo.name] || (deploymentUrl ? "Live Demo" : undefined),
         status,
         language: repo.language,
         updated: repo.updated_at,
