@@ -80,7 +80,7 @@ npm run check
 
 - **Portfolio:** https://lukemanyamazi.tech
 - **GitHub:** https://github.com/Luke-Manyamazi
-- **LinkedIn:** https://www.linkedin.com/in/luke-manyamazi-5632b9331/
+- **LinkedIn:** https://www.linkedin.com/in/lukemanyamazi/
 - **Company:** https://camluk.co.za/
 
 ## Purpose
