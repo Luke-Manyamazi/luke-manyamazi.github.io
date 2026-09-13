@@ -27,12 +27,14 @@ const FEATURED_ALIASES: Record<string, string> = {
   "cyfoverflow": "CYFoverflow",
 };
 
-const FEATURED_FALLBACKS: Record<string, { description: string; techStack: string[]; language?: string; link?: string }> = {
+const FEATURED_FALLBACKS: Record<string, { description: string; techStack: string[]; language?: string; link?: string; linkLabel?: string }> = {
   "BH-Farm-OS": {
     description:
       "Full-stack farm management platform for livestock, inventory, tasks, finances, alerts, and day-to-day agricultural operations.",
     techStack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
     language: "TypeScript",
+    link: "https://bh-farm-os.vercel.app",
+    linkLabel: "Live Demo",
   },
   Chenesa: {
     description:
@@ -40,6 +42,7 @@ const FEATURED_FALLBACKS: Record<string, { description: string; techStack: strin
     techStack: ["TypeScript", "Next.js", "FastAPI", "Supabase"],
     language: "TypeScript",
     link: "https://chenesa.vercel.app",
+    linkLabel: "Live Demo",
   },
   "ipalo-shop": {
     description:
@@ -47,18 +50,23 @@ const FEATURED_FALLBACKS: Record<string, { description: string; techStack: strin
     techStack: ["TypeScript", "Next.js", "Supabase", "Prisma", "PayFast"],
     language: "TypeScript",
     link: "https://ipalo-shop.vercel.app",
+    linkLabel: "Live Demo",
   },
   "rent-it": {
     description:
       "Web-first SaaS rental marketplace connecting customers and rental providers through a product-focused marketplace experience.",
     techStack: ["TypeScript", "Firebase", "Supabase", "Vercel"],
     language: "TypeScript",
+    link: "https://rent-it-alpha.vercel.app",
+    linkLabel: "Live Demo",
   },
   iSolveAI: {
     description:
       "AI-assisted troubleshooting tool for IT technicians that explains error messages using Google Gemini with backend fallback support.",
     techStack: ["JavaScript", "Chrome Extension", "Google Gemini", "REST API"],
     language: "JavaScript",
+    link: "https://github.com/Luke-Manyamazi/iSolveAI#2-load-the-extension",
+    linkLabel: "Install Extension",
   },
   CYFoverflow: {
     description:
@@ -66,6 +74,7 @@ const FEATURED_FALLBACKS: Record<string, { description: string; techStack: strin
     techStack: ["JavaScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
     language: "JavaScript",
     link: "https://cyfoverflow.hosting.codeyourfuture.io",
+    linkLabel: "Live Demo",
   },
 };
 
@@ -110,6 +119,8 @@ export function Projects() {
             : fallback?.techStack || [],
         language: project.language || fallback?.language,
         link: project.link || fallback?.link || "",
+        linkLabel: project.linkLabel || fallback?.linkLabel || (project.link ? "Live Demo" : undefined),
+        githubLink: project.githubLink || `https://github.com/Luke-Manyamazi/${canonicalTitle}`,
         status: normaliseStatus(project.status),
       };
     });
@@ -126,6 +137,7 @@ export function Projects() {
           techStack: fallback.techStack,
           language: fallback.language,
           link: fallback.link || "",
+          linkLabel: fallback.linkLabel,
           githubLink: `https://github.com/Luke-Manyamazi/${title}`,
           status: "inProgress",
           updated: new Date(0).toISOString(),
@@ -149,6 +161,8 @@ export function Projects() {
         techStack: featured?.techStack?.length ? featured.techStack : project.techStack || [],
         language: project.language || featured?.language,
         link: project.link || featured?.link || "",
+        linkLabel: project.linkLabel || featured?.linkLabel || (project.link ? "Live Demo" : undefined),
+        githubLink: project.githubLink || `https://github.com/Luke-Manyamazi/${canonicalTitle}`,
         status: normaliseStatus(project.status),
       };
     });
@@ -214,30 +228,45 @@ export function Projects() {
             {isFeatured && <span className="text-[10px] font-mono uppercase tracking-wider text-primary/80">Featured</span>}
           </div>
 
-          <div className="flex gap-3 items-center">
-            <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-primary whitespace-nowrap">{statusLabel}</span>
-            {project.githubLink && (
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} on GitHub`} className="text-muted-foreground hover:text-primary transition-colors">
-                <Github size={18} />
-              </a>
-            )}
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`} className="text-muted-foreground hover:text-primary transition-colors">
-                <ExternalLink size={18} />
-              </a>
-            )}
-          </div>
+          <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-primary whitespace-nowrap">{statusLabel}</span>
         </div>
 
         <h3 className="text-md font-bold text-white mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
         <p className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed">{project.description}</p>
 
-        <div className="flex flex-wrap gap-2 items-center">
+        <div className="flex flex-wrap gap-2 items-center mb-5">
           {project.language && <span className="text-[11px] font-medium text-white/80">{project.language}</span>}
           {project.language && project.techStack?.length > 0 && <span className="text-white/20">•</span>}
           {project.techStack?.filter((tech: string) => !["shipped", "inprogress", "in-progress", "learning"].includes(tech)).slice(0, 5).map((tech: string) => (
             <span key={tech} className="text-[11px] text-primary/80">{tech}</span>
           ))}
+        </div>
+
+        <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-white/5">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary/15 border border-primary/25 px-3 py-2 text-xs font-semibold text-primary transition-all duration-300 hover:bg-primary/25 hover:border-primary/45 hover:shadow-[0_0_24px_rgba(74,222,128,0.16)]"
+              aria-label={`${project.linkLabel || "Open"} for ${project.title}`}
+            >
+              {project.linkLabel === "Install Extension" ? "Install Extension" : "Live Demo"}
+              <ExternalLink size={14} />
+            </a>
+          )}
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-semibold text-white/75 transition-all duration-300 hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_22px_rgba(74,222,128,0.1)]"
+              aria-label={`View ${project.title} source on GitHub`}
+            >
+              View Code
+              <Github size={14} />
+            </a>
+          )}
         </div>
       </motion.article>
     );
